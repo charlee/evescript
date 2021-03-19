@@ -1,4 +1,5 @@
 import unittest
+import antlr4
 from evescript.compiler import EveScriptCompiler
 
 
@@ -130,6 +131,18 @@ multi_triggers_zero_conditions_ast = {
     ],
 }
 
+syntax_error = '''
+-
+'''
+
+comment = '''
+# empty
+'''
+
+comment_ast = {
+    'triggers': []
+}
+
 
 class CompilerTestCase(unittest.TestCase):
 
@@ -162,3 +175,11 @@ class CompilerTestCase(unittest.TestCase):
     def test_multi_triggers_zero_conditions(self):
         ast = self.compiler.compile(multi_triggers_zero_conditions)
         self.assertEqual(ast, multi_triggers_zero_conditions_ast)
+
+    def test_syntax_error(self):
+        with self.assertRaises(antlr4.error.Errors.ParseCancellationException):
+            self.compiler.compile(syntax_error, raise_exceptions=True)
+
+    def test_comment(self):
+        ast = self.compiler.compile(comment, True)
+        self.assertEqual(ast, comment_ast)

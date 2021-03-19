@@ -1,19 +1,40 @@
 from antlr4 import CommonTokenStream, ParseTreeVisitor
 from antlr4.InputStream import InputStream
+from antlr4.error.ErrorListener import ErrorListener
+from antlr4.error.Errors import ParseCancellationException
 
 from .eveparser.parser_output.EveScriptLexer import EveScriptLexer
 from .eveparser.parser_output.EveScriptParser import EveScriptParser
 
 
+class ThrowingErrorListener(ErrorListener):
+    def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
+        ex = ParseCancellationException(f'line {line}: {column} {msg}')
+        ex.line = line
+        ex.column = column
+        raise ex
+
+
 class EveScriptCompiler(ParseTreeVisitor):
 
-    def compile(self, f):
+    def compile(self, script, raise_exceptions=False):
 
-        input_stream = InputStream(f)
+        input_stream = InputStream(script)
 
         lexer = EveScriptLexer(input_stream)
+
+        if raise_exceptions:
+            lexer.removeErrorListeners()
+            lexer.addErrorListener(ThrowingErrorListener())
+
         token_stream = CommonTokenStream(lexer)
+
         parser = EveScriptParser(token_stream)
+
+        if raise_exceptions:
+            parser.removeErrorListeners()
+            parser.addErrorListener(ThrowingErrorListener())
+
         tree = parser.script()
 
         return self.visitScript(tree)
