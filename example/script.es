@@ -6,5 +6,6 @@ on (timer) {
 
     if ($currentTime matchCron "* * * * *") {
         say("run every minute")
+        say(true)
     }
 }

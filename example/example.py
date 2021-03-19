@@ -9,8 +9,8 @@ try:
     from evescript.compiler import EveScriptCompiler
 except ModuleNotFoundError:
     sys.path.append(os.path.normpath(os.path.join(cwd, '..', 'src')))
-    from executor import EveScriptExector
-    from compiler import EveScriptCompiler
+    from evescript.executor import EveScriptExector
+    from evescript.compiler import EveScriptCompiler
 
 from defs.operators import OPERATORS
 from defs.variables import VARIABLES

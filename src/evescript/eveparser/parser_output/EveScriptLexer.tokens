@@ -14,12 +14,13 @@ T__12=13
 T__13=14
 T__14=15
 T__15=16
-KEYWORD=17
-STRING=18
-VARIABLE=19
-NUMBER=20
-BOOL=21
-WS=22
+T__16=17
+T__17=18
+KEYWORD=19
+STRING=20
+VARIABLE=21
+NUMBER=22
+WS=23
 'on'=1
 '('=2
 ')'=3
@@ -35,4 +36,6 @@ WS=22
 '<='=13
 '=='=14
 '!='=15
-','=16
+'true'=16
+'false'=17
+','=18

@@ -85,6 +85,24 @@ multi_conditions_ast = {
     ]
 }
 
+multi_actions = '''
+    on (timer) {
+        if ($var1 > 0) {
+            action1("success", true)
+            action2("fail", "fail", 2)
+        }
+    }
+'''
+
+multi_actions_ast = {
+    'event': 'timer',
+    'conditions': [
+        { 'if': { 'operator': 'gt', 'operands': ['$var1', 0] }, 'then': [
+            {'func': 'action1', 'params': ['success', True]},
+            {'func': 'action2', 'params': ['fail', 'fail', 2],
+        }]},
+    ]
+}
 
 class CompilerTestCase(unittest.TestCase):
 
@@ -105,3 +123,7 @@ class CompilerTestCase(unittest.TestCase):
     def test_multi_conditions(self):
         ast = self.compiler.compile(multi_conditions)
         self.assertEqual(ast['triggers'][0], multi_conditions_ast)
+
+    def test_multi_actions(self):
+        ast = self.compiler.compile(multi_actions)
+        self.assertEqual(ast['triggers'][0], multi_actions_ast)

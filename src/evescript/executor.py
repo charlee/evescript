@@ -2,7 +2,7 @@ import sys
 import logging
 from copy import copy
 
-from exceptions import InvalidOperator, InvalidVariable
+from .exceptions import InvalidOperator, InvalidVariable
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)

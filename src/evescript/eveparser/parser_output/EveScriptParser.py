@@ -11,7 +11,7 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\30")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\31")
         buf.write("p\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
         buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16\t")
         buf.write("\16\3\2\7\2\36\n\2\f\2\16\2!\13\2\3\3\3\3\3\3\3\3\3\3")
@@ -21,30 +21,30 @@ def serializedATN():
         buf.write("\3\b\3\b\3\b\3\b\3\b\3\b\5\bT\n\b\3\t\3\t\3\t\3\t\3\n")
         buf.write("\3\n\3\13\3\13\5\13^\n\13\3\f\3\f\3\r\3\r\3\r\3\r\3\r")
         buf.write("\7\rg\n\r\f\r\16\rj\13\r\3\r\3\r\3\16\3\16\3\16\2\2\17")
-        buf.write("\2\4\6\b\n\f\16\20\22\24\26\30\32\2\4\4\2\f\21\23\23\4")
-        buf.write("\2\24\24\26\27\2k\2\37\3\2\2\2\4\"\3\2\2\2\6/\3\2\2\2")
-        buf.write("\b\61\3\2\2\2\nC\3\2\2\2\fJ\3\2\2\2\16S\3\2\2\2\20U\3")
-        buf.write("\2\2\2\22Y\3\2\2\2\24]\3\2\2\2\26_\3\2\2\2\30a\3\2\2\2")
-        buf.write("\32m\3\2\2\2\34\36\5\4\3\2\35\34\3\2\2\2\36!\3\2\2\2\37")
-        buf.write("\35\3\2\2\2\37 \3\2\2\2 \3\3\2\2\2!\37\3\2\2\2\"#\7\3")
-        buf.write("\2\2#$\7\4\2\2$%\5\6\4\2%&\7\5\2\2&*\7\6\2\2\')\5\b\5")
-        buf.write("\2(\'\3\2\2\2),\3\2\2\2*(\3\2\2\2*+\3\2\2\2+-\3\2\2\2")
-        buf.write(",*\3\2\2\2-.\7\7\2\2.\5\3\2\2\2/\60\7\23\2\2\60\7\3\2")
-        buf.write("\2\2\61\62\7\b\2\2\62\63\7\4\2\2\63\64\5\n\6\2\64\65\7")
-        buf.write("\5\2\2\659\7\6\2\2\668\5\30\r\2\67\66\3\2\2\28;\3\2\2")
-        buf.write("\29\67\3\2\2\29:\3\2\2\2:<\3\2\2\2;9\3\2\2\2<=\7\7\2\2")
-        buf.write("=\t\3\2\2\2>?\5\f\7\2?@\7\t\2\2@A\5\n\6\2AD\3\2\2\2BD")
-        buf.write("\5\f\7\2C>\3\2\2\2CB\3\2\2\2D\13\3\2\2\2EF\5\16\b\2FG")
-        buf.write("\7\n\2\2GH\5\f\7\2HK\3\2\2\2IK\5\16\b\2JE\3\2\2\2JI\3")
-        buf.write("\2\2\2K\r\3\2\2\2LM\7\4\2\2MN\5\n\6\2NO\7\5\2\2OT\3\2")
-        buf.write("\2\2PQ\7\13\2\2QT\5\16\b\2RT\5\20\t\2SL\3\2\2\2SP\3\2")
-        buf.write("\2\2SR\3\2\2\2T\17\3\2\2\2UV\5\24\13\2VW\5\22\n\2WX\5")
-        buf.write("\24\13\2X\21\3\2\2\2YZ\t\2\2\2Z\23\3\2\2\2[^\7\25\2\2")
-        buf.write("\\^\5\26\f\2][\3\2\2\2]\\\3\2\2\2^\25\3\2\2\2_`\t\3\2")
-        buf.write("\2`\27\3\2\2\2ab\7\23\2\2bc\7\4\2\2ch\5\32\16\2de\7\22")
-        buf.write("\2\2eg\5\32\16\2fd\3\2\2\2gj\3\2\2\2hf\3\2\2\2hi\3\2\2")
-        buf.write("\2ik\3\2\2\2jh\3\2\2\2kl\7\5\2\2l\31\3\2\2\2mn\5\24\13")
-        buf.write("\2n\33\3\2\2\2\n\37*9CJS]h")
+        buf.write("\2\4\6\b\n\f\16\20\22\24\26\30\32\2\4\4\2\f\21\25\25\5")
+        buf.write("\2\22\23\26\26\30\30\2k\2\37\3\2\2\2\4\"\3\2\2\2\6/\3")
+        buf.write("\2\2\2\b\61\3\2\2\2\nC\3\2\2\2\fJ\3\2\2\2\16S\3\2\2\2")
+        buf.write("\20U\3\2\2\2\22Y\3\2\2\2\24]\3\2\2\2\26_\3\2\2\2\30a\3")
+        buf.write("\2\2\2\32m\3\2\2\2\34\36\5\4\3\2\35\34\3\2\2\2\36!\3\2")
+        buf.write("\2\2\37\35\3\2\2\2\37 \3\2\2\2 \3\3\2\2\2!\37\3\2\2\2")
+        buf.write("\"#\7\3\2\2#$\7\4\2\2$%\5\6\4\2%&\7\5\2\2&*\7\6\2\2\'")
+        buf.write(")\5\b\5\2(\'\3\2\2\2),\3\2\2\2*(\3\2\2\2*+\3\2\2\2+-\3")
+        buf.write("\2\2\2,*\3\2\2\2-.\7\7\2\2.\5\3\2\2\2/\60\7\25\2\2\60")
+        buf.write("\7\3\2\2\2\61\62\7\b\2\2\62\63\7\4\2\2\63\64\5\n\6\2\64")
+        buf.write("\65\7\5\2\2\659\7\6\2\2\668\5\30\r\2\67\66\3\2\2\28;\3")
+        buf.write("\2\2\29\67\3\2\2\29:\3\2\2\2:<\3\2\2\2;9\3\2\2\2<=\7\7")
+        buf.write("\2\2=\t\3\2\2\2>?\5\f\7\2?@\7\t\2\2@A\5\n\6\2AD\3\2\2")
+        buf.write("\2BD\5\f\7\2C>\3\2\2\2CB\3\2\2\2D\13\3\2\2\2EF\5\16\b")
+        buf.write("\2FG\7\n\2\2GH\5\f\7\2HK\3\2\2\2IK\5\16\b\2JE\3\2\2\2")
+        buf.write("JI\3\2\2\2K\r\3\2\2\2LM\7\4\2\2MN\5\n\6\2NO\7\5\2\2OT")
+        buf.write("\3\2\2\2PQ\7\13\2\2QT\5\16\b\2RT\5\20\t\2SL\3\2\2\2SP")
+        buf.write("\3\2\2\2SR\3\2\2\2T\17\3\2\2\2UV\5\24\13\2VW\5\22\n\2")
+        buf.write("WX\5\24\13\2X\21\3\2\2\2YZ\t\2\2\2Z\23\3\2\2\2[^\7\27")
+        buf.write("\2\2\\^\5\26\f\2][\3\2\2\2]\\\3\2\2\2^\25\3\2\2\2_`\t")
+        buf.write("\3\2\2`\27\3\2\2\2ab\7\25\2\2bc\7\4\2\2ch\5\32\16\2de")
+        buf.write("\7\24\2\2eg\5\32\16\2fd\3\2\2\2gj\3\2\2\2hf\3\2\2\2hi")
+        buf.write("\3\2\2\2ik\3\2\2\2jh\3\2\2\2kl\7\5\2\2l\31\3\2\2\2mn\5")
+        buf.write("\24\13\2n\33\3\2\2\2\n\37*9CJS]h")
         return buf.getvalue()
 
 
@@ -60,14 +60,14 @@ class EveScriptParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'on'", "'('", "')'", "'{'", "'}'", "'if'", 
                      "'||'", "'&&'", "'!'", "'>'", "'>='", "'<'", "'<='", 
-                     "'=='", "'!='", "','" ]
+                     "'=='", "'!='", "'true'", "'false'", "','" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "KEYWORD", "STRING", "VARIABLE", "NUMBER", 
-                      "BOOL", "WS" ]
+                      "<INVALID>", "<INVALID>", "<INVALID>", "KEYWORD", 
+                      "STRING", "VARIABLE", "NUMBER", "WS" ]
 
     RULE_script = 0
     RULE_trigger = 1
@@ -104,12 +104,13 @@ class EveScriptParser ( Parser ):
     T__13=14
     T__14=15
     T__15=16
-    KEYWORD=17
-    STRING=18
-    VARIABLE=19
-    NUMBER=20
-    BOOL=21
-    WS=22
+    T__16=17
+    T__17=18
+    KEYWORD=19
+    STRING=20
+    VARIABLE=21
+    NUMBER=22
+    WS=23
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -136,12 +137,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_script
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitScript" ):
-                return visitor.visitScript(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -192,12 +187,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_trigger
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitTrigger" ):
-                return visitor.visitTrigger(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -253,12 +242,6 @@ class EveScriptParser ( Parser ):
         def getRuleIndex(self):
             return EveScriptParser.RULE_event
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitEvent" ):
-                return visitor.visitEvent(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -299,12 +282,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_condition
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitCondition" ):
-                return visitor.visitCondition(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -365,12 +342,6 @@ class EveScriptParser ( Parser ):
         def getRuleIndex(self):
             return EveScriptParser.RULE_expr
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitExpr" ):
-                return visitor.visitExpr(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -425,12 +396,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_term
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitTerm" ):
-                return visitor.visitTerm(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -491,12 +456,6 @@ class EveScriptParser ( Parser ):
         def getRuleIndex(self):
             return EveScriptParser.RULE_factor
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFactor" ):
-                return visitor.visitFactor(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -524,7 +483,7 @@ class EveScriptParser ( Parser ):
                 self.state = 79
                 self.factor()
                 pass
-            elif token in [EveScriptParser.STRING, EveScriptParser.VARIABLE, EveScriptParser.NUMBER, EveScriptParser.BOOL]:
+            elif token in [EveScriptParser.T__15, EveScriptParser.T__16, EveScriptParser.STRING, EveScriptParser.VARIABLE, EveScriptParser.NUMBER]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 80
                 self.predicate()
@@ -562,12 +521,6 @@ class EveScriptParser ( Parser ):
         def getRuleIndex(self):
             return EveScriptParser.RULE_predicate
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitPredicate" ):
-                return visitor.visitPredicate(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -604,12 +557,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_operator
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOperator" ):
-                return visitor.visitOperator(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -654,12 +601,6 @@ class EveScriptParser ( Parser ):
         def getRuleIndex(self):
             return EveScriptParser.RULE_operand
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOperand" ):
-                return visitor.visitOperand(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -676,7 +617,7 @@ class EveScriptParser ( Parser ):
                 self.state = 89
                 self.match(EveScriptParser.VARIABLE)
                 pass
-            elif token in [EveScriptParser.STRING, EveScriptParser.NUMBER, EveScriptParser.BOOL]:
+            elif token in [EveScriptParser.T__15, EveScriptParser.T__16, EveScriptParser.STRING, EveScriptParser.NUMBER]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 90
                 self.const()
@@ -706,17 +647,8 @@ class EveScriptParser ( Parser ):
         def NUMBER(self):
             return self.getToken(EveScriptParser.NUMBER, 0)
 
-        def BOOL(self):
-            return self.getToken(EveScriptParser.BOOL, 0)
-
         def getRuleIndex(self):
             return EveScriptParser.RULE_const
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitConst" ):
-                return visitor.visitConst(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -730,7 +662,7 @@ class EveScriptParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 93
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EveScriptParser.STRING) | (1 << EveScriptParser.NUMBER) | (1 << EveScriptParser.BOOL))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EveScriptParser.T__15) | (1 << EveScriptParser.T__16) | (1 << EveScriptParser.STRING) | (1 << EveScriptParser.NUMBER))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -764,12 +696,6 @@ class EveScriptParser ( Parser ):
         def getRuleIndex(self):
             return EveScriptParser.RULE_action
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitAction" ):
-                return visitor.visitAction(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -789,9 +715,9 @@ class EveScriptParser ( Parser ):
             self.state = 102
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==EveScriptParser.T__15:
+            while _la==EveScriptParser.T__17:
                 self.state = 98
-                self.match(EveScriptParser.T__15)
+                self.match(EveScriptParser.T__17)
                 self.state = 99
                 self.param()
                 self.state = 104
@@ -822,12 +748,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_param
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitParam" ):
-                return visitor.visitParam(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 

@@ -1,12 +1,11 @@
-from antlr4 import ParseTreeWalker, CommonTokenStream
+from antlr4 import CommonTokenStream, ParseTreeVisitor
 from antlr4.InputStream import InputStream
 
 from .eveparser.parser_output.EveScriptLexer import EveScriptLexer
 from .eveparser.parser_output.EveScriptParser import EveScriptParser
-from .eveparser.parser_output.EveScriptVisitor import EveScriptVisitor
 
 
-class EveScriptCompiler(EveScriptVisitor):
+class EveScriptCompiler(ParseTreeVisitor):
 
     def compile(self, f):
 
@@ -141,8 +140,10 @@ class EveScriptCompiler(EveScriptVisitor):
                 return float(text)
             else:
                 return int(text)
-        elif ctx.BOOL():
-            return text == 'true'
+        elif text == 'true':
+            return True
+        elif text == 'false':
+            return False
 
 
     # Visit a parse tree produced by EveScriptParser#action.
