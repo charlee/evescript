@@ -68,7 +68,7 @@ complex_expr_ast = {
 
 multi_conditions = '''
     on (timer) {
-        if ($var1 > 0) {
+        if ($var1 match "abc") {
             action("success")
         }
         if ($var2 < 0) {
@@ -80,7 +80,7 @@ multi_conditions = '''
 multi_conditions_ast = {
     'event': 'timer',
     'conditions': [
-        { 'if': { 'operator': 'gt', 'operands': ['$var1', 0] }, 'then': [{ 'func': 'action', 'params': ['success']}]},
+        { 'if': { 'operator': 'match', 'operands': ['$var1', "abc"] }, 'then': [{ 'func': 'action', 'params': ['success']}]},
         { 'if': { 'operator': 'lt', 'operands': ['$var2', 0] }, 'then': [{ 'func': 'action', 'params': ['fail']}]},
     ]
 }
@@ -89,7 +89,7 @@ multi_actions = '''
     on (timer) {
         if ($var1 > 0) {
             action1("success", true)
-            action2("fail", "fail", 2)
+            action2("fail", false, 2)
         }
     }
 '''
@@ -99,10 +99,37 @@ multi_actions_ast = {
     'conditions': [
         { 'if': { 'operator': 'gt', 'operands': ['$var1', 0] }, 'then': [
             {'func': 'action1', 'params': ['success', True]},
-            {'func': 'action2', 'params': ['fail', 'fail', 2],
+            {'func': 'action2', 'params': ['fail', False, 2],
         }]},
     ]
 }
+
+zero_actions = '''
+    on (timer) {
+        if ($var1 > 0) {
+        }
+    }
+'''
+
+zero_actions_ast = {
+    'event': 'timer',
+    'conditions': [
+        {'if': { 'operator': 'gt', 'operands': ['$var1', 0] }, 'then': [] },
+    ]
+}
+
+multi_triggers_zero_conditions = '''
+    on (timer1) {}
+    on (timer2) {}
+'''
+
+multi_triggers_zero_conditions_ast = {
+    'triggers': [
+        {'event': 'timer1', 'conditions': []},
+        {'event': 'timer2', 'conditions': []},
+    ],
+}
+
 
 class CompilerTestCase(unittest.TestCase):
 
@@ -127,3 +154,11 @@ class CompilerTestCase(unittest.TestCase):
     def test_multi_actions(self):
         ast = self.compiler.compile(multi_actions)
         self.assertEqual(ast['triggers'][0], multi_actions_ast)
+
+    def test_zero_actions(self):
+        ast = self.compiler.compile(zero_actions)
+        self.assertEqual(ast['triggers'][0], zero_actions_ast)
+
+    def test_multi_triggers_zero_conditions(self):
+        ast = self.compiler.compile(multi_triggers_zero_conditions)
+        self.assertEqual(ast, multi_triggers_zero_conditions_ast)

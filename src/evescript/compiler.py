@@ -142,7 +142,8 @@ class EveScriptCompiler(ParseTreeVisitor):
                 return int(text)
         elif text == 'true':
             return True
-        elif text == 'false':
+        else:
+            # text == 'false'
             return False
 
 
