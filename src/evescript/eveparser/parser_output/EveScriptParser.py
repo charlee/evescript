@@ -137,14 +137,6 @@ class EveScriptParser ( Parser ):
         def getRuleIndex(self):
             return EveScriptParser.RULE_script
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterScript" ):
-                listener.enterScript(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitScript" ):
-                listener.exitScript(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitScript" ):
                 return visitor.visitScript(self)
@@ -200,14 +192,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_trigger
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTrigger" ):
-                listener.enterTrigger(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTrigger" ):
-                listener.exitTrigger(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitTrigger" ):
@@ -269,14 +253,6 @@ class EveScriptParser ( Parser ):
         def getRuleIndex(self):
             return EveScriptParser.RULE_event
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEvent" ):
-                listener.enterEvent(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEvent" ):
-                listener.exitEvent(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitEvent" ):
                 return visitor.visitEvent(self)
@@ -323,14 +299,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_condition
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCondition" ):
-                listener.enterCondition(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCondition" ):
-                listener.exitCondition(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitCondition" ):
@@ -397,14 +365,6 @@ class EveScriptParser ( Parser ):
         def getRuleIndex(self):
             return EveScriptParser.RULE_expr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpr" ):
-                listener.enterExpr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpr" ):
-                listener.exitExpr(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitExpr" ):
                 return visitor.visitExpr(self)
@@ -465,14 +425,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_term
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTerm" ):
-                listener.enterTerm(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTerm" ):
-                listener.exitTerm(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitTerm" ):
@@ -538,14 +490,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_factor
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFactor" ):
-                listener.enterFactor(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFactor" ):
-                listener.exitFactor(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitFactor" ):
@@ -618,14 +562,6 @@ class EveScriptParser ( Parser ):
         def getRuleIndex(self):
             return EveScriptParser.RULE_predicate
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPredicate" ):
-                listener.enterPredicate(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPredicate" ):
-                listener.exitPredicate(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitPredicate" ):
                 return visitor.visitPredicate(self)
@@ -668,14 +604,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_operator
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOperator" ):
-                listener.enterOperator(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOperator" ):
-                listener.exitOperator(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitOperator" ):
@@ -725,14 +653,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_operand
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOperand" ):
-                listener.enterOperand(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOperand" ):
-                listener.exitOperand(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitOperand" ):
@@ -792,14 +712,6 @@ class EveScriptParser ( Parser ):
         def getRuleIndex(self):
             return EveScriptParser.RULE_const
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConst" ):
-                listener.enterConst(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConst" ):
-                listener.exitConst(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitConst" ):
                 return visitor.visitConst(self)
@@ -851,14 +763,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_action
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAction" ):
-                listener.enterAction(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAction" ):
-                listener.exitAction(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitAction" ):
@@ -918,14 +822,6 @@ class EveScriptParser ( Parser ):
 
         def getRuleIndex(self):
             return EveScriptParser.RULE_param
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterParam" ):
-                listener.enterParam(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitParam" ):
-                listener.exitParam(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitParam" ):

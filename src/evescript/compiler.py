@@ -1,9 +1,9 @@
 from antlr4 import ParseTreeWalker, CommonTokenStream
 from antlr4.InputStream import InputStream
 
-from eveparser.parser_output.EveScriptLexer import EveScriptLexer
-from eveparser.parser_output.EveScriptParser import EveScriptParser
-from eveparser.parser_output.EveScriptVisitor import EveScriptVisitor
+from .eveparser.parser_output.EveScriptLexer import EveScriptLexer
+from .eveparser.parser_output.EveScriptParser import EveScriptParser
+from .eveparser.parser_output.EveScriptVisitor import EveScriptVisitor
 
 
 class EveScriptCompiler(EveScriptVisitor):
