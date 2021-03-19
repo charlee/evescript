@@ -2,7 +2,7 @@ import sys
 import logging
 from copy import copy
 
-from .exceptions import InvalidOperator, InvalidVariable
+from .exceptions import InvalidOperator, InvalidVariable, InvalidAction
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
@@ -54,6 +54,7 @@ class EveScriptExector:
             raise InvalidAction(f"Invalid action `{action['func']}'")
 
         params = action['params']
+        # this exception does not happen with actual compiled script
         if params is None:
             raise InvalidActionParams(f"Params not provided for action `{action['func']}'")
 

@@ -3,3 +3,9 @@ class InvalidOperator(Exception):
 
 class InvalidVariable(Exception):
     pass
+
+class InvalidAction(Exception):
+    pass
+
+class InvalidActionParams(Exception):
+    pass
