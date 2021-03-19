@@ -69,7 +69,7 @@ fragment HEX : [0-9a-fA-F] ;
 fragment INT :   '0' | '1'..'9' '0'..'9'* ; // no leading zeros
 
 // skip all line comments
-COMMENT: '#' .*? '\n' -> skip ;
+COMMENT: '#' ~[\r\n]* -> skip ;
 
 // skip whitespaces
 WS  :   [ \t\n\r]+ -> skip ;
