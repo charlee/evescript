@@ -1,36 +1,10 @@
----
-title: Overview
----
+EveScript
+=============
 
-+---------+-----------------------------------------------------------+
-| docs    | [![Docum                                                  |
-|         | entation Status](https://readthedocs.org/projects/evescri |
-|         | pt/badge/?style=flat)](https://evescript.readthedocs.io/) |
-+---------+-----------------------------------------------------------+
-| tests   | | [![Travis-CI Build Statu                                |
-|         | s](https://api.travis-ci.com/charlee/evescript.svg?branch |
-|         | =master)](https://travis-ci.com/github/charlee/evescript) |
-|         | |                                                         |
-+---------+-----------------------------------------------------------+
-| package | |                                                         |
-|         |  [![PyPI Package latest release](https://img.shields.io/p |
-|         | ypi/v/evescript.svg)](https://pypi.org/project/evescript) |
-|         |   [![PyPI Wheel](https://img.shields.io/pypi/             |
-|         | wheel/evescript.svg)](https://pypi.org/project/evescript) |
-|         |                                                           |
-|         |  [![Supported versions](https://img.shields.io/pypi/pyver |
-|         | sions/evescript.svg)](https://pypi.org/project/evescript) |
-|         |   [![Support                                              |
-|         | ed implementations](https://img.shields.io/pypi/implement |
-|         | ation/evescript.svg)](https://pypi.org/project/evescript) |
-|         | | [![Commits since latest release](https://img.shields.io |
-|         | /github/commits-since/charlee/evescript/v0.0.0.svg)](http |
-|         | s://github.com/charlee/evescript/compare/v0.0.0...master) |
-+---------+-----------------------------------------------------------+
+[![Documentation Status](https://readthedocs.org/projects/evescript/badge/?style=flat)](https://evescript.readthedocs.io/)
+[![Travis-CI Build Status](https://api.travis-ci.com/charlee/evescript.svg?branch=master)](https://travis-ci.com/github/charlee/evescript)
 
 A simple script language for event-based automation tasks.
-
--   Free software: MIT license
 
 # Installation
 

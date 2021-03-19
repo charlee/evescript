@@ -1,6 +1,6 @@
----
-subtitle: 0.0.0 (2021-03-19)
-title: Changelog
----
+ChangeLog
+===========
 
--   First release on PyPI.
+## 1.0.0 (2021-03-19)
+
+-  First release on PyPI.

@@ -1,6 +1,5 @@
----
-title: Contributing
----
+Contributing
+================
 
 Contributions are welcome, and they are greatly appreciated! Every
 little bit helps, and credit will always be given.
@@ -74,8 +73,8 @@ For merging, you should:
 
 1.  Include passing tests (run `tox`)[^1].
 2.  Update documentation when there\'s new API, functionality etc.
-3.  Add a note to `CHANGELOG.rst` about the changes.
-4.  Add yourself to `AUTHORS.rst`.
+3.  Add a note to `CHANGELOG.md` about the changes.
+4.  Add yourself to `AUTHORS.md`.
 
 ## Tips
 

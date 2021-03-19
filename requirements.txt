@@ -1,1 +1,1 @@
-antlr4-python3-runtime==4.9.2
+twine==3.4.1tox==3.23.0

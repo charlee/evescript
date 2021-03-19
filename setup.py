@@ -23,13 +23,10 @@ def read(*names, **kwargs):
 
 setup(
     name='evescript',
-    version='0.0.0',
+    version='1.0.0',
     license='MIT',
     description='A simple script language for event-based automation tasks.',
-    long_description='%s\n%s' % (
-        re.compile('^.. start-badges.*^.. end-badges', re.M | re.S).sub('', read('README.rst')),
-        re.sub(':[a-z]+:`~?(.*?)`', r'``\1``', read('CHANGELOG.rst'))
-    ),
+    long_description='A simple script language for event-based automation tasks.',
     author='Charlee Li',
     author_email='oda.charlee@gmail.com',
     url='https://github.com/charlee/evescript',
@@ -67,11 +64,11 @@ setup(
         'Issue Tracker': 'https://github.com/charlee/evescript/issues',
     },
     keywords=[
-        # eg: 'keyword1', 'keyword2', 'keyword3',
+        'script', 'evescript', 'automation',
     ],
     python_requires='>=3.6',
     install_requires=[
-        # eg: 'aspectlib==1.1.1', 'six>=1.7',
+        'antlr4-python3-runtime==4.9.2',
     ],
     extras_require={
         # eg:
