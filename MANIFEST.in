@@ -10,8 +10,11 @@ include .editorconfig
 include tox.ini .travis.yml .readthedocs.yml
 
 include *.md
+include *.rst
+include LICENSE
 include *.txt
 recursive-include example *.es
+recursive-include example *.txt
 recursive-include example *.py
 
 global-exclude *.py[cod] __pycache__/* *.so *.dylib __antlr__/*

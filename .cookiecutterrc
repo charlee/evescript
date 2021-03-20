@@ -64,7 +64,7 @@ default_context:
     test_runner:               'pytest'
     travis:                    'yes'
     travis_osx:                'no'
-    version:                   '1.0.0'
+    version:                   '0.1.0'
     website:                   'https://charlee.li'
     year_from:                 '2021'
     year_to:                   '2021'

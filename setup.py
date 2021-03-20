@@ -23,7 +23,7 @@ def read(*names, **kwargs):
 
 setup(
     name='evescript',
-    version='1.0.0',
+    version='0.1.0',
     license='MIT',
     description='A simple script language for event-based automation tasks.',
     long_description='A simple script language for event-based automation tasks.',
