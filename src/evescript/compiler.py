@@ -58,7 +58,7 @@ class EveScriptCompiler(ParseTreeVisitor):
         if ctx.getChildCount() == 3 and ctx.getChild(1).getText() == '||':
             # expr: term '||' expr
             return {
-                'operator': 'or',
+                'operator': '||',
                 'operands': [
                     self.visitTerm(ctx.term()),
                     self.visitExpr(ctx.expr()),
@@ -73,7 +73,7 @@ class EveScriptCompiler(ParseTreeVisitor):
         if ctx.getChildCount() == 3 and ctx.getChild(1).getText() == '&&':
             # term: factor '||' term
             return {
-                'operator': 'and',
+                'operator': '&&',
                 'operands': [
                     self.visitFactor(ctx.factor()),
                     self.visitTerm(ctx.term()),
@@ -88,7 +88,7 @@ class EveScriptCompiler(ParseTreeVisitor):
         if ctx.getChildCount() == 2 and ctx.getChild(0).getText() == '!':
             # factor: '!' factor
             return {
-                'operator': 'not',
+                'operator': '!',
                 'operands': [
                     self.visitFactor(ctx.factor()),
                 ],
@@ -111,20 +111,7 @@ class EveScriptCompiler(ParseTreeVisitor):
     # Visit a parse tree produced by EveScriptParser#operator.
     def visitOperator(self, ctx: EveScriptParser.OperatorContext):
         text = ctx.getChild(0).getText()
-        if text == '>':
-            return 'gt'
-        elif text == '>=':
-            return 'gte'
-        elif text == '<':
-            return 'lt'
-        elif text == '<=':
-            return 'lte'
-        elif text == '==':
-            return 'eq'
-        elif text == '!=':
-            return 'ne'
-        else:
-            return text
+        return text
 
     # Visit a parse tree produced by EveScriptParser#operand.
     def visitOperand(self, ctx: EveScriptParser.OperandContext):
