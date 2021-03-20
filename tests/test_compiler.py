@@ -1,7 +1,8 @@
 import unittest
-import antlr4
-from evescript.compiler import EveScriptCompiler
 
+import antlr4
+
+from evescript.compiler import EveScriptCompiler
 
 simple_script = '''
     if ($var > 0) {
@@ -11,8 +12,8 @@ simple_script = '''
 
 simple_script_ast = {
     'statements': [{
-        'if': { 'operator': 'gt', 'operands': ['$var', 0] },
-        'then': [{ 'func': 'action', 'params': ['$var > 0'] }],
+        'if': {'operator': 'gt', 'operands': ['$var', 0]},
+        'then': [{'func': 'action', 'params': ['$var > 0']}],
     }]
 }
 
@@ -35,7 +36,7 @@ complex_expr_ast = {
         {
             'operator': 'and',
             'operands': [
-                { 'operator': 'gte', 'operands': ['$var3', 3] },
+                {'operator': 'gte', 'operands': ['$var3', 3]},
                 {
                     'operator': 'and',
                     'operands': [
@@ -71,8 +72,8 @@ multi_conditions = '''
 
 multi_conditions_ast = {
     'statements': [
-        { 'if': { 'operator': 'match', 'operands': ['$var1', "abc"] }, 'then': [{ 'func': 'action', 'params': ['success']}]},
-        { 'if': { 'operator': 'lt', 'operands': ['$var2', 0] }, 'then': [{ 'func': 'action', 'params': ['fail']}]},
+        {'if': {'operator': 'match', 'operands': ['$var1', "abc"]}, 'then': [{'func': 'action', 'params': ['success']}]},
+        {'if': {'operator': 'lt', 'operands': ['$var2', 0]}, 'then': [{'func': 'action', 'params': ['fail']}]},
     ]
 }
 
@@ -85,10 +86,13 @@ multi_actions = '''
 
 multi_actions_ast = {
     'statements': [
-        { 'if': { 'operator': 'gt', 'operands': ['$var1', 0] }, 'then': [
-            {'func': 'action1', 'params': ['success', True]},
-            {'func': 'action2', 'params': ['fail', False, 2],
-        }]},
+        {
+            'if': {'operator': 'gt', 'operands': ['$var1', 0]},
+            'then': [
+                {'func': 'action1', 'params': ['success', True]},
+                {'func': 'action2', 'params': ['fail', False, 2]}
+            ]
+        },
     ]
 }
 
@@ -99,7 +103,7 @@ zero_actions = '''
 
 zero_actions_ast = {
     'statements': [
-        {'if': { 'operator': 'gt', 'operands': ['$var1', 0] }, 'then': [] },
+        {'if': {'operator': 'gt', 'operands': ['$var1', 0]}, 'then': []},
     ]
 }
 

@@ -1,8 +1,8 @@
-import sys
 import logging
+import sys
 from copy import copy
 
-from .exceptions import InvalidOperator, InvalidVariable, InvalidAction
+from .exceptions import InvalidAction, InvalidActionParams, InvalidOperator, InvalidVariable
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
@@ -26,14 +26,14 @@ DEFAULT_OPERATORS = {
     'ne': lambda a, b: a != b,
 }
 
-class EveScriptExector:
 
+class EveScriptExector:
 
     def __init__(self, config={}):
         self.actions = {}
         self.variables = {}
         self.operators = copy(DEFAULT_OPERATORS)
-        
+
         self.add_actions(config.get('actions', {}))
         self.add_variables(config.get('variables', {}))
         self.add_operators(config.get('operators', {}))
@@ -43,10 +43,9 @@ class EveScriptExector:
 
     def add_variables(self, variables):
         self.variables.update(variables)
-    
+
     def add_operators(self, operators):
         self.operators.update(operators)
-
 
     def run_action(self, action):
         func = self.actions.get(action['func'])
@@ -59,7 +58,6 @@ class EveScriptExector:
             raise InvalidActionParams(f"Params not provided for action `{action['func']}'")
 
         func(*params)
-
 
     def evaluate_expr(self, expr):
         logger.debug(f'{expr} = ?')
@@ -84,7 +82,6 @@ class EveScriptExector:
 
         logger.debug(f'{expr} => {result}')
         return result
-
 
     def run_script(self, script):
 

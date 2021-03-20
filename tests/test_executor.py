@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import Mock
-from evescript.compiler import EveScriptCompiler
-from evescript.executor import EveScriptExector
-from evescript.exceptions import InvalidAction, InvalidVariable, InvalidOperator
 
+from evescript.compiler import EveScriptCompiler
+from evescript.exceptions import InvalidAction, InvalidOperator, InvalidVariable
+from evescript.executor import EveScriptExector
 
 actions = {
     'say': Mock(),
@@ -55,8 +55,8 @@ ivnalid_operator = '''
     }
 '''
 
-class ExecutorTestCase(unittest.TestCase):
 
+class ExecutorTestCase(unittest.TestCase):
 
     def setUp(self):
         for mock in [*list(actions.values()), *list(operators.values()), *list(variables.values())]:
@@ -95,7 +95,7 @@ class ExecutorTestCase(unittest.TestCase):
 
     def test_complex_expr(self):
         variables['$var2'].return_value = -1
-        variables['$var3'].return_value = 0 
+        variables['$var3'].return_value = 0
         operators['match'].return_value = True
 
         ast = self.compiler.compile(complex_expr)
@@ -109,7 +109,7 @@ class ExecutorTestCase(unittest.TestCase):
 
     def test_complex_expr_fail(self):
         variables['$var2'].return_value = 1
-        variables['$var3'].return_value = 0 
+        variables['$var3'].return_value = 0
         operators['match'].return_value = False
 
         ast = self.compiler.compile(complex_expr)
