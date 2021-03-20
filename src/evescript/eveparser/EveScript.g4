@@ -1,15 +1,9 @@
 grammar EveScript;
 
-script: trigger*
+script: statement*
     ;
 
-trigger: 'on' '(' event ')' '{' condition* '}'
-    ;
-
-event: KEYWORD
-    ;
-
-condition: 'if' '(' expr ')' '{' action* '}'
+statement: 'if' '(' expr ')' '{' action* '}'
     ;
 
 expr: term '||' expr

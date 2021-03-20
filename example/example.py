@@ -29,5 +29,4 @@ executor = EveScriptExector({
     'variables': VARIABLES,
 })
 
-timer_trigger = compiled_script['triggers'][0]
-executor.run_trigger(timer_trigger)
+executor.run_script(compiled_script)

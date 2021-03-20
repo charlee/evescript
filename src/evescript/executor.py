@@ -86,9 +86,9 @@ class EveScriptExector:
         return result
 
 
-    def run_trigger(self, trigger):
+    def run_script(self, script):
 
-        for condition in trigger['conditions']:
-            if self.evaluate_expr(condition['if']):
-                for action in condition['then']:
+        for statement in script['statements']:
+            if self.evaluate_expr(statement['if']):
+                for action in statement['then']:
                     self.run_action(action)

@@ -43,22 +43,11 @@ class EveScriptCompiler(ParseTreeVisitor):
     # Visit a parse tree produced by EveScriptParser#script.
     def visitScript(self, ctx:EveScriptParser.ScriptContext):
         return {
-            'triggers': [self.visitTrigger(trigger) for trigger in ctx.trigger()],
+            'statements': [self.visitStatement(statement) for statement in ctx.statement()],
         }
-
-    # Visit a parse tree produced by EveScriptParser#trigger.
-    def visitTrigger(self, ctx:EveScriptParser.TriggerContext):
-        return {
-            'event': self.visitEvent(ctx.event()),
-            'conditions': [self.visitCondition(condition) for condition in ctx.condition()]
-        }
-
-    # Visit a parse tree produced by EveScriptParser#event.
-    def visitEvent(self, ctx:EveScriptParser.EventContext):
-        return ctx.KEYWORD().getText()
 
     # Visit a parse tree produced by EveScriptParser#condition.
-    def visitCondition(self, ctx:EveScriptParser.ConditionContext):
+    def visitStatement(self, ctx:EveScriptParser.StatementContext):
         return {
             'if': self.visitExpr(ctx.expr()),
             'then': [self.visitAction(action) for action in ctx.action()],
