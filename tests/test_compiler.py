@@ -4,28 +4,21 @@ from evescript.compiler import EveScriptCompiler
 
 
 simple_script = '''
-on (timer) {
     if ($var > 0) {
         action("$var > 0")
     }
-}
 '''
 
 simple_script_ast = {
-    'triggers': [{
-        'event': 'timer',
-        'conditions': [{
-            'if': { 'operator': 'gt', 'operands': ['$var', 0] },
-            'then': [{ 'func': 'action', 'params': ['$var > 0'] }],
-        }]
+    'statements': [{
+        'if': { 'operator': 'gt', 'operands': ['$var', 0] },
+        'then': [{ 'func': 'action', 'params': ['$var > 0'] }],
     }]
 }
 
 complex_expr = '''
-    on (timer) {
-        if ($var1 > 1 && $var2 < 2 || $var3 >= 3 && $var4 <= 4 && ($var5 != 5.0 || !($var6 == 0.6))) {
-            action("success")
-        }
+    if ($var1 > 1 && $var2 < 2 || $var3 >= 3 && $var4 <= 4 && ($var5 != 5.0 || !($var6 == 0.6))) {
+        action("success")
     }
 '''
 
@@ -68,36 +61,30 @@ complex_expr_ast = {
 }
 
 multi_conditions = '''
-    on (timer) {
-        if ($var1 match "abc") {
-            action("success")
-        }
-        if ($var2 < 0) {
-            action("fail")
-        }
+    if ($var1 match "abc") {
+        action("success")
+    }
+    if ($var2 < 0) {
+        action("fail")
     }
 '''
 
 multi_conditions_ast = {
-    'event': 'timer',
-    'conditions': [
+    'statements': [
         { 'if': { 'operator': 'match', 'operands': ['$var1', "abc"] }, 'then': [{ 'func': 'action', 'params': ['success']}]},
         { 'if': { 'operator': 'lt', 'operands': ['$var2', 0] }, 'then': [{ 'func': 'action', 'params': ['fail']}]},
     ]
 }
 
 multi_actions = '''
-    on (timer) {
-        if ($var1 > 0) {
-            action1("success", true)
-            action2("fail", false, 2)
-        }
+    if ($var1 > 0) {
+        action1("success", true)
+        action2("fail", false, 2)
     }
 '''
 
 multi_actions_ast = {
-    'event': 'timer',
-    'conditions': [
+    'statements': [
         { 'if': { 'operator': 'gt', 'operands': ['$var1', 0] }, 'then': [
             {'func': 'action1', 'params': ['success', True]},
             {'func': 'action2', 'params': ['fail', False, 2],
@@ -106,30 +93,16 @@ multi_actions_ast = {
 }
 
 zero_actions = '''
-    on (timer) {
-        if ($var1 > 0) {
-        }
+    if ($var1 > 0) {
     }
 '''
 
 zero_actions_ast = {
-    'event': 'timer',
-    'conditions': [
+    'statements': [
         {'if': { 'operator': 'gt', 'operands': ['$var1', 0] }, 'then': [] },
     ]
 }
 
-multi_triggers_zero_conditions = '''
-    on (timer1) {}
-    on (timer2) {}
-'''
-
-multi_triggers_zero_conditions_ast = {
-    'triggers': [
-        {'event': 'timer1', 'conditions': []},
-        {'event': 'timer2', 'conditions': []},
-    ],
-}
 
 syntax_error = '''
 -
@@ -140,7 +113,7 @@ comment = '''
 '''
 
 comment_ast = {
-    'triggers': []
+    'statements': []
 }
 
 
@@ -158,23 +131,19 @@ class CompilerTestCase(unittest.TestCase):
 
     def test_complex_expr(self):
         ast = self.compiler.compile(complex_expr)
-        self.assertEqual(ast['triggers'][0]['conditions'][0]['if'], complex_expr_ast)
+        self.assertEqual(ast['statements'][0]['if'], complex_expr_ast)
 
     def test_multi_conditions(self):
         ast = self.compiler.compile(multi_conditions)
-        self.assertEqual(ast['triggers'][0], multi_conditions_ast)
+        self.assertEqual(ast, multi_conditions_ast)
 
     def test_multi_actions(self):
         ast = self.compiler.compile(multi_actions)
-        self.assertEqual(ast['triggers'][0], multi_actions_ast)
+        self.assertEqual(ast, multi_actions_ast)
 
     def test_zero_actions(self):
         ast = self.compiler.compile(zero_actions)
-        self.assertEqual(ast['triggers'][0], zero_actions_ast)
-
-    def test_multi_triggers_zero_conditions(self):
-        ast = self.compiler.compile(multi_triggers_zero_conditions)
-        self.assertEqual(ast, multi_triggers_zero_conditions_ast)
+        self.assertEqual(ast, zero_actions_ast)
 
     def test_syntax_error(self):
         with self.assertRaises(antlr4.error.Errors.ParseCancellationException):

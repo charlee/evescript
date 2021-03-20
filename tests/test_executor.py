@@ -21,50 +21,38 @@ variables = {
 }
 
 simple_script = '''
-on (timer) {
     if ($var1 > 0) {
         say("$var1 > 0")
     }
-}
 '''
 
 multi_actions = '''
-on (timer) {
     if ($var1 > 0 && $var2 < 0) {
         say("$var1 > 0")
         play("$var2 < 0")
     }
-}
 '''
 
 complex_expr = '''
-on (timer) {
     if (($var1 match "abc" || $var2 < 0) && ($var3 == 0)) {
         say("success")
     }
-}
 '''
 
 ivnalid_action = '''
-on (timer) {
     if ($var1 > 0) {
         test("$var1 > 0")
     }
-}
 '''
 
 ivnalid_variable = '''
-on (timer) {
     if ($invalid > 0) {
     }
-}
 '''
 
 ivnalid_operator = '''
-on (timer) {
     if ($var1 invalidOperator 0) {
     }
-}
 '''
 
 class ExecutorTestCase(unittest.TestCase):
@@ -88,7 +76,7 @@ class ExecutorTestCase(unittest.TestCase):
         variables['$var1'].return_value = 1
 
         ast = self.compiler.compile(simple_script)
-        self.executor.run_trigger(ast['triggers'][0])
+        self.executor.run_script(ast)
 
         variables['$var1'].assert_called()
         actions['say'].assert_called_with('$var1 > 0')
@@ -98,7 +86,7 @@ class ExecutorTestCase(unittest.TestCase):
         variables['$var2'].return_value = -1
 
         ast = self.compiler.compile(multi_actions)
-        self.executor.run_trigger(ast['triggers'][0])
+        self.executor.run_script(ast)
 
         variables['$var1'].assert_called()
         variables['$var2'].assert_called()
@@ -111,7 +99,7 @@ class ExecutorTestCase(unittest.TestCase):
         operators['match'].return_value = True
 
         ast = self.compiler.compile(complex_expr)
-        self.executor.run_trigger(ast['triggers'][0])
+        self.executor.run_script(ast)
 
         variables['$var1'].assert_called()
         variables['$var2'].assert_called()
@@ -125,7 +113,7 @@ class ExecutorTestCase(unittest.TestCase):
         operators['match'].return_value = False
 
         ast = self.compiler.compile(complex_expr)
-        self.executor.run_trigger(ast['triggers'][0])
+        self.executor.run_script(ast)
 
         variables['$var1'].assert_called()
         variables['$var2'].assert_called()
@@ -138,18 +126,18 @@ class ExecutorTestCase(unittest.TestCase):
         ast = self.compiler.compile(ivnalid_action)
 
         with self.assertRaises(InvalidAction):
-            self.executor.run_trigger(ast['triggers'][0])
+            self.executor.run_script(ast)
 
     def test_invalid_variable(self):
         variables['$var1'].return_value = 1
         ast = self.compiler.compile(ivnalid_variable)
 
         with self.assertRaises(InvalidVariable):
-            self.executor.run_trigger(ast['triggers'][0])
+            self.executor.run_script(ast)
 
     def test_invalid_operator(self):
         variables['$var1'].return_value = 1
         ast = self.compiler.compile(ivnalid_operator)
 
         with self.assertRaises(InvalidOperator):
-            self.executor.run_trigger(ast['triggers'][0])
+            self.executor.run_script(ast)
