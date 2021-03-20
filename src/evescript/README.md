@@ -7,13 +7,9 @@ EveScript
 
 
 ```bnf
-<script> ::= { <trigger> }
+<script> ::= { <statement> }
 
-<trigger> ::= "on" "(" <event> ")" "{" { condition } "}"
-
-<event> ::= keyword
-
-<condition> ::= "if" "(" <expr> ")" "{" { action } "}"
+<statement> ::= "if" "(" <expr> ")" "{" { action } "}"
 
 <expr>   ::= <term> "||" <expr>
           |  <term>
@@ -40,7 +36,7 @@ EveScript
 
 <const>     ::= string
              |  number
-             | bool
+             |  bool
 
 
 <action>   ::= keyword "(" <param> { "," <param> } ")"
@@ -51,7 +47,9 @@ EveScript
 
 ## Example
 
-if ($currentTime matchCron "0 0 * * *" && $lightSensor > 20) {
-    say("Hello, world!")
-    play("music.mp3")
+on (timer) {
+    if ($currentTime matchCron "0 0 * * *" && $lightSensor > 20) {
+        say("Hello, world!")
+        play("music.mp3")
+    }
 }
