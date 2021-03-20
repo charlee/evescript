@@ -2,6 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 import io
+import re
 from glob import glob
 from os.path import basename, dirname, join, splitext
 
@@ -21,7 +22,10 @@ setup(
     version='0.1.0',
     license='MIT',
     description='A simple script language for event-based automation tasks.',
-    long_description='A simple script language for event-based automation tasks.',
+    long_description='%s\n%s' % (
+        re.compile('^.. start-badges.*^.. end-badges', re.M | re.S).sub('', read('README.rst')),
+        re.sub(':[a-z]+:`~?(.*?)`', r'``\1``', read('CHANGELOG.rst'))
+    ),
     author='Charlee Li',
     author_email='oda.charlee@gmail.com',
     url='https://github.com/charlee/evescript',
