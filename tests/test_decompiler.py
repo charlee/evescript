@@ -1,7 +1,5 @@
 import unittest
 
-import antlr4
-
 from evescript.compiler import EveScriptCompiler
 from evescript.decompiler import EveScriptDecompiler
 
@@ -56,10 +54,6 @@ class DecompilerTestCase(unittest.TestCase):
 
     def test_simple_script(self):
         ast = self.compiler.compile(simple_script)
-        self.assertDecompile(ast)
-
-    def test_multi_actions(self):
-        ast = self.compiler.compile(multi_actions)
         self.assertDecompile(ast)
 
     def test_complex_expr(self):

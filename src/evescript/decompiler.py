@@ -1,5 +1,6 @@
 def indent(lines, level=1):
-    return [ '  ' * level + line for line in lines]
+    return ['  ' * level + line for line in lines]
+
 
 def precedence(operator):
     if operator == '!':
@@ -59,7 +60,7 @@ class EveScriptDecompiler:
 
     def decompile_const(self, ast):
         if isinstance(ast, bool):
-            if ast == True:
+            if ast:
                 return 'true'
             else:
                 return 'false'
@@ -67,7 +68,6 @@ class EveScriptDecompiler:
             return f'"{ast}"'
         else:
             return ast
-
 
     def decompile_operand(self, ast):
         if isinstance(ast, str) and ast.startswith('$'):

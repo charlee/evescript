@@ -1,10 +1,6 @@
 import os
 import sys
 
-from defs.actions import ACTIONS
-from defs.operators import OPERATORS
-from defs.variables import VARIABLES
-
 cwd = os.path.dirname(__file__)
 
 try:
