@@ -53,17 +53,24 @@ class EveScriptDecompiler:
 
     def decompile_action(self, ast):
         func = ast['func']
-        params = [self.decompile_operand(param) for param in ast['params']]
+        params = [self.decompile_const(param) for param in ast['params']]
 
         return f'{func}({", ".join(params)})'
 
-    def decompile_operand(self, ast):
+    def decompile_const(self, ast):
         if isinstance(ast, bool):
             if ast == True:
                 return 'true'
             else:
                 return 'false'
-        elif isinstance(ast, str) and not ast.startswith('$'):
+        elif isinstance(ast, str):
             return f'"{ast}"'
         else:
             return ast
+
+
+    def decompile_operand(self, ast):
+        if isinstance(ast, str) and ast.startswith('$'):
+            return ast
+        else:
+            return self.decompile_const(ast)

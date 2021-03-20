@@ -44,7 +44,7 @@ const: STRING
 action: KEYWORD '(' param (',' param)* ')'
     ;
 
-param: operand
+param: const
     ;
 
 KEYWORD: [a-zA-Z_][a-zA-Z_0-9]* ;

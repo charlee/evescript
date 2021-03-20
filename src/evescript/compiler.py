@@ -146,4 +146,4 @@ class EveScriptCompiler(ParseTreeVisitor):
 
     # Visit a parse tree produced by EveScriptParser#param.
     def visitParam(self, ctx: EveScriptParser.ParamContext):
-        return self.visitOperand(ctx.operand())
+        return self.visitConst(ctx.const())

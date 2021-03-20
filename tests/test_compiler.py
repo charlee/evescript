@@ -12,7 +12,7 @@ simple_script = '''
 
 simple_script_ast = {
     'statements': [{
-        'if': {'operator': 'gt', 'operands': ['$var', 0]},
+        'if': {'operator': '>', 'operands': ['$var', 0]},
         'then': [{'func': 'action', 'params': ['$var > 0']}],
     }]
 }
@@ -24,31 +24,31 @@ complex_expr = '''
 '''
 
 complex_expr_ast = {
-    'operator': 'or',
+    'operator': '||',
     'operands': [
         {
-            'operator': 'and',
+            'operator': '&&',
             'operands': [
-                {'operator': 'gt', 'operands': ['$var1', 1]},
-                {'operator': 'lt', 'operands': ['$var2', 2]},
+                {'operator': '>', 'operands': ['$var1', 1]},
+                {'operator': '<', 'operands': ['$var2', 2]},
             ]
         },
         {
-            'operator': 'and',
+            'operator': '&&',
             'operands': [
-                {'operator': 'gte', 'operands': ['$var3', 3]},
+                {'operator': '>=', 'operands': ['$var3', 3]},
                 {
-                    'operator': 'and',
+                    'operator': '&&',
                     'operands': [
-                        {'operator': 'lte', 'operands': ['$var4', 4]},
+                        {'operator': '<=', 'operands': ['$var4', 4]},
                         {
-                            'operator': 'or',
+                            'operator': '||',
                             'operands': [
-                                {'operator': 'ne', 'operands': ['$var5', 5.0]},
+                                {'operator': '!=', 'operands': ['$var5', 5.0]},
                                 {
-                                    'operator': 'not',
+                                    'operator': '!',
                                     'operands': [{
-                                        'operator': 'eq',
+                                        'operator': '==',
                                         'operands': ['$var6', 0.6],
                                     }]
                                 },
@@ -73,7 +73,7 @@ multi_conditions = '''
 multi_conditions_ast = {
     'statements': [
         {'if': {'operator': 'match', 'operands': ['$var1', "abc"]}, 'then': [{'func': 'action', 'params': ['success']}]},
-        {'if': {'operator': 'lt', 'operands': ['$var2', 0]}, 'then': [{'func': 'action', 'params': ['fail']}]},
+        {'if': {'operator': '<', 'operands': ['$var2', 0]}, 'then': [{'func': 'action', 'params': ['fail']}]},
     ]
 }
 
@@ -87,7 +87,7 @@ multi_actions = '''
 multi_actions_ast = {
     'statements': [
         {
-            'if': {'operator': 'gt', 'operands': ['$var1', 0]},
+            'if': {'operator': '>', 'operands': ['$var1', 0]},
             'then': [
                 {'func': 'action1', 'params': ['success', True]},
                 {'func': 'action2', 'params': ['fail', False, 2]}
@@ -103,7 +103,7 @@ zero_actions = '''
 
 zero_actions_ast = {
     'statements': [
-        {'if': {'operator': 'gt', 'operands': ['$var1', 0]}, 'then': []},
+        {'if': {'operator': '>', 'operands': ['$var1', 0]}, 'then': []},
     ]
 }
 

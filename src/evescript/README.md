@@ -41,7 +41,7 @@ EveScript
 
 <action>   ::= keyword "(" <param> { "," <param> } ")"
 
-<param>    ::= <operand>
+<param>    ::= <const>
 ```
 
 

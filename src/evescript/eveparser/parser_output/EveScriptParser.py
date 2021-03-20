@@ -39,7 +39,7 @@ def serializedATN():
         buf.write("LM\t\3\2\2M\23\3\2\2\2NO\7\24\2\2OP\7\4\2\2PU\5\26\f\2")
         buf.write("QR\7\23\2\2RT\5\26\f\2SQ\3\2\2\2TW\3\2\2\2US\3\2\2\2U")
         buf.write("V\3\2\2\2VX\3\2\2\2WU\3\2\2\2XY\7\5\2\2Y\25\3\2\2\2Z[")
-        buf.write("\5\20\t\2[\27\3\2\2\2\t\33&\60\67@JU")
+        buf.write("\5\22\n\2[\27\3\2\2\2\t\33&\60\67@JU")
         return buf.getvalue()
 
 
@@ -639,8 +639,8 @@ class EveScriptParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def operand(self):
-            return self.getTypedRuleContext(EveScriptParser.OperandContext,0)
+        def const(self):
+            return self.getTypedRuleContext(EveScriptParser.ConstContext,0)
 
 
         def getRuleIndex(self):
@@ -656,7 +656,7 @@ class EveScriptParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 88
-            self.operand()
+            self.const()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

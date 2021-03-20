@@ -13,17 +13,17 @@ logger.setLevel(logging.INFO)
 
 DEFAULT_OPERATORS = {
     # Logical operators
-    'and': lambda a, b: a and b,
-    'or': lambda a, b: a or b,
-    'not': lambda a: not a,
+    '&&': lambda a, b: a and b,
+    '||': lambda a, b: a or b,
+    '!': lambda a: not a,
 
     # Comparison operatos
-    'lt': lambda a, b: a < b,
-    'lte': lambda a, b: a <= b,
-    'gt': lambda a, b: a > b,
-    'gte': lambda a, b: a >= b,
-    'eq': lambda a, b: a == b,
-    'ne': lambda a, b: a != b,
+    '<': lambda a, b: a < b,
+    '<=': lambda a, b: a <= b,
+    '>': lambda a, b: a > b,
+    '>=': lambda a, b: a >= b,
+    '==': lambda a, b: a == b,
+    '!=': lambda a, b: a != b,
 }
 
 
