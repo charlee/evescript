@@ -58,7 +58,8 @@ Then modify `EveScript.g4` based on the modified EBNF, and run `make` to rebuild
 
 <const>     ::= string
              |  number
-             |  bool
+             |  'true'
+             |  'false'
 
 
 <action>   ::= keyword "(" <param> { "," <param> } ")"
@@ -69,7 +70,9 @@ Then modify `EveScript.g4` based on the modified EBNF, and run `make` to rebuild
 
 ## Script Example
 
+```
 if ($currentTime matchCron "0 0 * * *" && $lightSensor > 20) {
     say("Hello, world!")
     play("music.mp3")
 }
+```
