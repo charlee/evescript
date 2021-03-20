@@ -39,7 +39,7 @@ In this script, we used three entities that need to be provided when executing.
 
 We will provide these entities in the `Run a script`_ section.
 
-For more details, see `EveScript Reference`_.
+For more details, see :ref:`evescript-reference`.
 
 
 Compile a Script
@@ -88,5 +88,3 @@ the entities (actions, operators, and variables) used in the scripts must be pro
 
 Since we mocked the varialbe ``$lightSensor`` to make it always returns 10, the action will be executed and will output ``It's getting dark now!``.
 
-EveScript Reference
--------------------

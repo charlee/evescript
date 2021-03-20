@@ -1,5 +1,8 @@
-EveScript Language
-====================
+.. _evescript-reference:
+
+EveScript Language Reference
+=============================
+
 
 Basic Syntax
 -------------
