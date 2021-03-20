@@ -41,9 +41,9 @@ EveScript
     :alt: Supported implementations
     :target: https://pypi.org/project/evescript
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/charlee/evescript/0.1.1.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/charlee/evescript/0.2.0.svg
     :alt: Commits since latest release
-    :target: https://github.com/charlee/evescript/compare/0.1.1...master
+    :target: https://github.com/charlee/evescript/compare/0.2.0...master
 
 
 
