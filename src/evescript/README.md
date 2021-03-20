@@ -1,9 +1,31 @@
 EveScript
 ==========
 
+This document provides some information about how the EveScript language itself is created.
+
+## How to Build the Parser
 
 
-## BNF
+The parser is written in [ANTLR](https://www.antlr.org/) and can be built with the following commands:
+
+```
+$ cd eveparser
+$ make
+```
+
+The defualt make target will download ANTLR to `__antlr__`, then generate the lexer and parser
+using the grammar definition `EveScript.g4`.
+
+
+## Modify the Language
+
+The full EBNF definition is listed in the [EBNF] section in this document.
+Make any necessary changes and make sure the result EBNF sounds.
+
+Then modify `EveScript.g4` based on the modified EBNF, and run `make` to rebuild the lexer and parser.
+
+
+## EBNF
 
 
 ```bnf
@@ -45,11 +67,9 @@ EveScript
 ```
 
 
-## Example
+## Script Example
 
-on (timer) {
-    if ($currentTime matchCron "0 0 * * *" && $lightSensor > 20) {
-        say("Hello, world!")
-        play("music.mp3")
-    }
+if ($currentTime matchCron "0 0 * * *" && $lightSensor > 20) {
+    say("Hello, world!")
+    play("music.mp3")
 }
