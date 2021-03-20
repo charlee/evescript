@@ -4,11 +4,8 @@ Usage
 
 EveScript consists of a compiler ``EveScriptCompiler`` and an executor ``EveScriptExector``.
 
-Quickstart
-------------
-
 Write a Script
-~~~~~~~~~~~~~~~
+---------------
 
 An EveScript is written in the following form:
 
@@ -43,7 +40,7 @@ For more details, see :ref:`evescript-reference`.
 
 
 Compile a Script
-~~~~~~~~~~~~~~~~~
+-----------------
 
 An EveScript file (``*.es``) needs to be compiled before executed.
 This is done by calling the ``compile()`` method in the ``EveScriptCompiler`` class.
@@ -60,7 +57,7 @@ This is done by calling the ``compile()`` method in the ``EveScriptCompiler`` cl
 
 
 Run a Script
-~~~~~~~~~~~~
+------------
 
 The compiled script can be executed with ``EveScriptExector``. When instancing ``EveScriptExector``,
 the entities (actions, operators, and variables) used in the scripts must be provided. Each entity is a function or lambda.
@@ -86,5 +83,38 @@ the entities (actions, operators, and variables) used in the scripts must be pro
   # run the first trigger
   executor.run_script(compiled_script)
 
-Since we mocked the varialbe ``$lightSensor`` to make it always returns 10, the action will be executed and will output ``It's getting dark now!``.
+Since we mocked the varialbe ``$lightSensor`` to make it always returns 10, the action will be executed and will print ``It's getting dark now!``.
+
+Decompile a Script
+------------------
+
+Sometimes it is necessary to retrieve the script source for given compiled script. This can be done with ``EveScriptDecompiler``.
+It provides a ``decompile`` method that takes a compiled script and returns the original script text.
+
+*NOTE*: The decompiled script may not be identical to the original script - the whitespaces, new lines may differ,
+and the decompiled script will not contain any comments that may have appeared in the original script.
+
+The following snippet shows how to decompile:
+
+::
+
+  import os
+  import sys
+
+  from evescript.compiler import EveScriptCompiler
+  from evescript.decompiler import EveScriptDecompiler
+
+  script = '''
+  if ($lightSensor < 20) {
+    say("It's getting dark now!")
+  }
+  '''
+
+  compiler = EveScriptCompiler()
+  compiled_script = compiler.compile(script)
+
+  decompiler = EveScriptDecompiler()
+  decompiled_script = decompiler.decompile(compiled_script)
+
+  print(decompiled_script)
 

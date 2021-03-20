@@ -39,6 +39,10 @@ In the above script, ``$currentTime``, ``$lightSensor`` are called **variables**
 They are the data sources of this script. And the ``matchCron``, ``>``, ``||``, ``<`` are **operators**,
 where ``matchCron`` is a custom operator, while others are built-in operators. And the ``say``, ``play`` are **actions**.
 
+The following figure shows how a script is compiled and executed.
+
+.. image:: evescript.png
+
 All variables, actions, and custom operators must be provided when executing this script.
 See Actions_, Operators_, and Variables_ for details.
 
