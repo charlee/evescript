@@ -3,7 +3,7 @@ from unittest.mock import Mock
 
 from evescript.compiler import EveScriptCompiler
 from evescript.exceptions import InvalidAction, InvalidOperator, InvalidVariable
-from evescript.executor import EveScriptExector
+from evescript.executor import EveScriptExecutor
 
 actions = {
     'say': Mock(),
@@ -63,7 +63,7 @@ class ExecutorTestCase(unittest.TestCase):
             mock.reset_mock()
 
         self.compiler = EveScriptCompiler()
-        self.executor = EveScriptExector({
+        self.executor = EveScriptExecutor({
             'actions': actions,
             'operators': operators,
             'variables': variables,

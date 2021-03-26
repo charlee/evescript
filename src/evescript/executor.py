@@ -27,7 +27,7 @@ DEFAULT_OPERATORS = {
 }
 
 
-class EveScriptExector:
+class EveScriptExecutor:
 
     def __init__(self, config={}):
         self.actions = {}

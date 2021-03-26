@@ -9,11 +9,11 @@ cwd = os.path.dirname(__file__)
 
 try:
     from evescript.compiler import EveScriptCompiler
-    from evescript.executor import EveScriptExector
+    from evescript.executor import EveScriptExecutor
 except ModuleNotFoundError:
     sys.path.append(os.path.normpath(os.path.join(cwd, '..', 'src')))
     from evescript.compiler import EveScriptCompiler
-    from evescript.executor import EveScriptExector
+    from evescript.executor import EveScriptExecutor
 
 
 with open('script.es') as f:
@@ -22,7 +22,7 @@ with open('script.es') as f:
 compiler = EveScriptCompiler()
 compiled_script = compiler.compile(script)
 
-executor = EveScriptExector({
+executor = EveScriptExecutor({
     'actions': ACTIONS,
     'operators': OPERATORS,
     'variables': VARIABLES,

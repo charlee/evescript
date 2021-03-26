@@ -2,7 +2,7 @@
 Usage
 =====
 
-EveScript consists of a compiler ``EveScriptCompiler`` and an executor ``EveScriptExector``.
+EveScript consists of a compiler ``EveScriptCompiler`` and an executor ``EveScriptExecutor``.
 
 Write a Script
 ---------------
@@ -59,12 +59,12 @@ This is done by calling the ``compile()`` method in the ``EveScriptCompiler`` cl
 Run a Script
 ------------
 
-The compiled script can be executed with ``EveScriptExector``. When instancing ``EveScriptExector``,
+The compiled script can be executed with ``EveScriptExecutor``. When instancing ``EveScriptExecutor``,
 the entities (actions, operators, and variables) used in the scripts must be provided. Each entity is a function or lambda.
 
 ::
 
-  from evescript.executor import EveScriptExector
+  from evescript.executor import EveScriptExecutor
 
   ACTIONS = {
     'say': lambda s: print(s),
@@ -75,7 +75,7 @@ the entities (actions, operators, and variables) used in the scripts must be pro
   }
 
   # Provide the actions and the variables used in the script
-  executor = EveScriptExector({
+  executor = EveScriptExecutor({
     'actions': ACTIONS,
     'variables': VARIABLES,
   })

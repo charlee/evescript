@@ -21,7 +21,7 @@ Overview
   compiler = EveScriptCompiler()
   compiled_script = compiler.compile(script)
 
-  executor = EveScriptExector({
+  executor = EveScriptExecutor({
       'actions': { 'say': lambda x: print(x) },
       'variables': { '$lightSensor': lightSensor },
   })
