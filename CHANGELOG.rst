@@ -3,8 +3,9 @@ Changelog
 =========
 
 
-0.2.1 (2021-03-20)
+0.3.0 (2021-03-20)
 ------------------
+* Fixed typo (EveScriptExector => EveScriptExecutor)
 
 * Added decompiler.
 * Compiler will not rename built-in operators.
