@@ -243,6 +243,7 @@ EBNF Definition
             | <predicate>
   
   <predicate> ::= <operand> <operator> <operand>
+              | <boolean>
   
   <operator>  ::= ">"
                |  ">="
@@ -257,7 +258,10 @@ EBNF Definition
   
   <const>     ::= string
                |  number
-               |  bool
+               |  <boolean>
+
+  <boolean>   ::= 'true'
+               |  'false'
   
   
   <action>   ::= keyword "(" <param> { "," <param> } ")"

@@ -44,7 +44,7 @@ Then modify `EveScript.g4` based on the modified EBNF, and run `make` to rebuild
           | <predicate>
 
 <predicate> ::= <operand> <operator> <operand>
-             | <bool>
+             | <boolean>
 
 <operator>  ::= ">"
              |  ">="
@@ -57,7 +57,7 @@ Then modify `EveScript.g4` based on the modified EBNF, and run `make` to rebuild
 <operand>   ::= variable
              |  <const>
 
-<bool>      ::= 'true'
+<boolean>   ::= 'true'
              |  'false'
 
 <const>     ::= string
