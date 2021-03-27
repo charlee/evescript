@@ -12,3 +12,7 @@ if ($currentTime matchCron "* * * * *") {
 if (true) {
     say("Always true")
 }
+
+if (false) {
+    say("This action should never run!")
+}
