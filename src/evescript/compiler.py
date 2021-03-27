@@ -103,10 +103,13 @@ class EveScriptCompiler(ParseTreeVisitor):
 
     # Visit a parse tree produced by EveScriptParser#predicate.
     def visitPredicate(self, ctx: EveScriptParser.PredicateContext):
-        return {
-            'operator': self.visitOperator(ctx.operator()),
-            'operands': [self.visitOperand(operand) for operand in ctx.operand()],
-        }
+        if ctx.boolean():
+            return self.visitBoolean(ctx.boolean())
+        else:
+            return {
+                'operator': self.visitOperator(ctx.operator()),
+                'operands': [self.visitOperand(operand) for operand in ctx.operand()],
+            }
 
     # Visit a parse tree produced by EveScriptParser#operator.
     def visitOperator(self, ctx: EveScriptParser.OperatorContext):
@@ -124,14 +127,19 @@ class EveScriptCompiler(ParseTreeVisitor):
     # Visit a parse tree produced by EveScriptParser#const.
     def visitConst(self, ctx: EveScriptParser.ConstContext):
         text = ctx.getText()
-        if ctx.STRING():
+        if ctx.boolean():
+            return self.visitBoolean(ctx.boolean())
+        elif ctx.STRING():
             return text.strip('"')
         elif ctx.NUMBER():
             if '.' in text:
                 return float(text)
             else:
                 return int(text)
-        elif text == 'true':
+
+    def visitBoolean(self, ctx: EveScriptParser.BooleanContext):
+        text = ctx.getText()
+        if text == 'true':
             return True
         else:
             # text == 'false'

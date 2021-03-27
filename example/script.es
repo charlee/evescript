@@ -8,3 +8,7 @@ if ($currentTime matchCron "* * * * *") {
     say("run every minute")
     say(true)
 }
+
+if (true) {
+    say("Always true")
+}

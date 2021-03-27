@@ -20,6 +20,7 @@ factor: '(' expr ')'
     ;
 
 predicate: operand operator operand
+    | boolean
     ;
 
 operator: '>'
@@ -35,10 +36,13 @@ operand: VARIABLE
     | const
     ;
 
+boolean: 'true'
+    | 'false'
+    ;
+
 const: STRING
     | NUMBER
-    | 'true'
-    | 'false'
+    | boolean
     ;
 
 action: KEYWORD '(' param (',' param)* ')'

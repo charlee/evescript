@@ -17,6 +17,18 @@ simple_script_ast = {
     }]
 }
 
+constant_expr = '''
+    if (true) {
+    }
+'''
+
+constant_expr_ast = {
+    'statements': [{
+        'if': True,
+        'then': [],
+    }]
+}
+
 complex_expr = '''
     if ($var1 > 1 && $var2 < 2 || $var3 >= 3 && $var4 <= 4 && ($var5 != 5.0 || !($var6 == 0.6))) {
         action("success")
@@ -132,6 +144,10 @@ class CompilerTestCase(unittest.TestCase):
     def test_simple_script(self):
         ast = self.compiler.compile(simple_script)
         self.assertEqual(ast, simple_script_ast)
+
+    def test_constant_expr(self):
+        ast = self.compiler.compile(constant_expr)
+        self.assertEqual(ast, constant_expr_ast)
 
     def test_complex_expr(self):
         ast = self.compiler.compile(complex_expr)
