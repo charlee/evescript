@@ -11,14 +11,21 @@ The basic form of an EveScript is as follows:
 
 ::
 
+  # if statement
   if (expression) {
     action1(...)
     action2(...)
   }
 
+  # nested if
   if (expression) {
-    ...
+    if (another_expression) {
+
+    }
   }
+
+  # call action directly
+  action3()
 
 An exmaple script may look like this:
 
@@ -229,8 +236,11 @@ EBNF Definition
 ::
 
   <script> ::= { <statement> }
+
+  <block>  ::= '{' { <statement> } '}'
   
   <statement> ::= "if" "(" <expr> ")" "{" { action } "}"
+               |  action
   
   <expr>   ::= <term> "||" <expr>
             |  <term>
