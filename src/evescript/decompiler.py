@@ -1,8 +1,10 @@
 def indent(lines, level=1):
     return ['  ' * level + line for line in lines]
 
+
 def flatten(r):
     return [item for s in r for item in s]
+
 
 def precedence(operator):
     if operator == '!':

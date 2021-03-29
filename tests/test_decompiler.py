@@ -54,6 +54,7 @@ if (true) {
 }
 '''
 
+
 class DecompilerTestCase(unittest.TestCase):
 
     def setUp(self):
