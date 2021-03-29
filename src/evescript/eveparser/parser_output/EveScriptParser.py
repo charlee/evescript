@@ -12,37 +12,39 @@ else:
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\31")
-        buf.write("g\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
-        buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\3\2\7\2")
-        buf.write("\34\n\2\f\2\16\2\37\13\2\3\3\3\3\3\3\3\3\3\3\3\3\7\3\'")
-        buf.write("\n\3\f\3\16\3*\13\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\5\4\63")
-        buf.write("\n\4\3\5\3\5\3\5\3\5\3\5\5\5:\n\5\3\6\3\6\3\6\3\6\3\6")
-        buf.write("\3\6\3\6\5\6C\n\6\3\7\3\7\3\7\3\7\3\7\5\7J\n\7\3\b\3\b")
-        buf.write("\3\t\3\t\5\tP\n\t\3\n\3\n\3\13\3\13\3\13\5\13W\n\13\3")
-        buf.write("\f\3\f\3\f\3\f\3\f\7\f^\n\f\f\f\16\fa\13\f\3\f\3\f\3\r")
-        buf.write("\3\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30\2\4\4\2")
-        buf.write("\13\20\24\24\3\2\21\22\2e\2\35\3\2\2\2\4 \3\2\2\2\6\62")
-        buf.write("\3\2\2\2\b9\3\2\2\2\nB\3\2\2\2\fI\3\2\2\2\16K\3\2\2\2")
-        buf.write("\20O\3\2\2\2\22Q\3\2\2\2\24V\3\2\2\2\26X\3\2\2\2\30d\3")
-        buf.write("\2\2\2\32\34\5\4\3\2\33\32\3\2\2\2\34\37\3\2\2\2\35\33")
-        buf.write("\3\2\2\2\35\36\3\2\2\2\36\3\3\2\2\2\37\35\3\2\2\2 !\7")
-        buf.write("\3\2\2!\"\7\4\2\2\"#\5\6\4\2#$\7\5\2\2$(\7\6\2\2%\'\5")
-        buf.write("\26\f\2&%\3\2\2\2\'*\3\2\2\2(&\3\2\2\2()\3\2\2\2)+\3\2")
-        buf.write("\2\2*(\3\2\2\2+,\7\7\2\2,\5\3\2\2\2-.\5\b\5\2./\7\b\2")
-        buf.write("\2/\60\5\6\4\2\60\63\3\2\2\2\61\63\5\b\5\2\62-\3\2\2\2")
-        buf.write("\62\61\3\2\2\2\63\7\3\2\2\2\64\65\5\n\6\2\65\66\7\t\2")
-        buf.write("\2\66\67\5\b\5\2\67:\3\2\2\28:\5\n\6\29\64\3\2\2\298\3")
-        buf.write("\2\2\2:\t\3\2\2\2;<\7\4\2\2<=\5\6\4\2=>\7\5\2\2>C\3\2")
-        buf.write("\2\2?@\7\n\2\2@C\5\n\6\2AC\5\f\7\2B;\3\2\2\2B?\3\2\2\2")
-        buf.write("BA\3\2\2\2C\13\3\2\2\2DE\5\20\t\2EF\5\16\b\2FG\5\20\t")
-        buf.write("\2GJ\3\2\2\2HJ\5\22\n\2ID\3\2\2\2IH\3\2\2\2J\r\3\2\2\2")
-        buf.write("KL\t\2\2\2L\17\3\2\2\2MP\7\26\2\2NP\5\24\13\2OM\3\2\2")
-        buf.write("\2ON\3\2\2\2P\21\3\2\2\2QR\t\3\2\2R\23\3\2\2\2SW\7\25")
-        buf.write("\2\2TW\7\27\2\2UW\5\22\n\2VS\3\2\2\2VT\3\2\2\2VU\3\2\2")
-        buf.write("\2W\25\3\2\2\2XY\7\24\2\2YZ\7\4\2\2Z_\5\30\r\2[\\\7\23")
-        buf.write("\2\2\\^\5\30\r\2][\3\2\2\2^a\3\2\2\2_]\3\2\2\2_`\3\2\2")
-        buf.write("\2`b\3\2\2\2a_\3\2\2\2bc\7\5\2\2c\27\3\2\2\2de\5\24\13")
-        buf.write("\2e\31\3\2\2\2\13\35(\629BIOV_")
+        buf.write("m\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
+        buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16\t")
+        buf.write("\16\3\2\7\2\36\n\2\f\2\16\2!\13\2\3\3\3\3\3\3\3\3\3\3")
+        buf.write("\3\3\7\3)\n\3\f\3\16\3,\13\3\3\3\3\3\3\4\3\4\3\4\3\4\3")
+        buf.write("\4\5\4\65\n\4\3\5\3\5\3\5\3\5\3\5\5\5<\n\5\3\6\3\6\3\6")
+        buf.write("\3\6\3\6\3\6\3\6\5\6E\n\6\3\7\3\7\3\7\3\7\3\7\5\7L\n\7")
+        buf.write("\3\b\3\b\3\t\3\t\5\tR\n\t\3\n\3\n\3\13\3\13\3\13\5\13")
+        buf.write("Y\n\13\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\r\7\rc\n\r\f\r\16")
+        buf.write("\rf\13\r\3\r\5\ri\n\r\3\16\3\16\3\16\2\2\17\2\4\6\b\n")
+        buf.write("\f\16\20\22\24\26\30\32\2\4\4\2\13\20\24\24\3\2\21\22")
+        buf.write("\2k\2\37\3\2\2\2\4\"\3\2\2\2\6\64\3\2\2\2\b;\3\2\2\2\n")
+        buf.write("D\3\2\2\2\fK\3\2\2\2\16M\3\2\2\2\20Q\3\2\2\2\22S\3\2\2")
+        buf.write("\2\24X\3\2\2\2\26Z\3\2\2\2\30h\3\2\2\2\32j\3\2\2\2\34")
+        buf.write("\36\5\4\3\2\35\34\3\2\2\2\36!\3\2\2\2\37\35\3\2\2\2\37")
+        buf.write(" \3\2\2\2 \3\3\2\2\2!\37\3\2\2\2\"#\7\3\2\2#$\7\4\2\2")
+        buf.write("$%\5\6\4\2%&\7\5\2\2&*\7\6\2\2\')\5\26\f\2(\'\3\2\2\2")
+        buf.write("),\3\2\2\2*(\3\2\2\2*+\3\2\2\2+-\3\2\2\2,*\3\2\2\2-.\7")
+        buf.write("\7\2\2.\5\3\2\2\2/\60\5\b\5\2\60\61\7\b\2\2\61\62\5\6")
+        buf.write("\4\2\62\65\3\2\2\2\63\65\5\b\5\2\64/\3\2\2\2\64\63\3\2")
+        buf.write("\2\2\65\7\3\2\2\2\66\67\5\n\6\2\678\7\t\2\289\5\b\5\2")
+        buf.write("9<\3\2\2\2:<\5\n\6\2;\66\3\2\2\2;:\3\2\2\2<\t\3\2\2\2")
+        buf.write("=>\7\4\2\2>?\5\6\4\2?@\7\5\2\2@E\3\2\2\2AB\7\n\2\2BE\5")
+        buf.write("\n\6\2CE\5\f\7\2D=\3\2\2\2DA\3\2\2\2DC\3\2\2\2E\13\3\2")
+        buf.write("\2\2FG\5\20\t\2GH\5\16\b\2HI\5\20\t\2IL\3\2\2\2JL\5\22")
+        buf.write("\n\2KF\3\2\2\2KJ\3\2\2\2L\r\3\2\2\2MN\t\2\2\2N\17\3\2")
+        buf.write("\2\2OR\7\26\2\2PR\5\24\13\2QO\3\2\2\2QP\3\2\2\2R\21\3")
+        buf.write("\2\2\2ST\t\3\2\2T\23\3\2\2\2UY\7\25\2\2VY\7\27\2\2WY\5")
+        buf.write("\22\n\2XU\3\2\2\2XV\3\2\2\2XW\3\2\2\2Y\25\3\2\2\2Z[\7")
+        buf.write("\24\2\2[\\\7\4\2\2\\]\5\30\r\2]^\7\5\2\2^\27\3\2\2\2_")
+        buf.write("d\5\32\16\2`a\7\23\2\2ac\5\32\16\2b`\3\2\2\2cf\3\2\2\2")
+        buf.write("db\3\2\2\2de\3\2\2\2ei\3\2\2\2fd\3\2\2\2gi\3\2\2\2h_\3")
+        buf.write("\2\2\2hg\3\2\2\2i\31\3\2\2\2jk\5\24\13\2k\33\3\2\2\2\f")
+        buf.write("\37*\64;DKQXdh")
         return buf.getvalue()
 
 
@@ -78,11 +80,12 @@ class EveScriptParser ( Parser ):
     RULE_boolean = 8
     RULE_const = 9
     RULE_action = 10
-    RULE_param = 11
+    RULE_params = 11
+    RULE_param = 12
 
     ruleNames =  [ "script", "statement", "expr", "term", "factor", "predicate", 
                    "operator", "operand", "boolean", "const", "action", 
-                   "param" ]
+                   "params", "param" ]
 
     EOF = Token.EOF
     T__0=1
@@ -145,13 +148,13 @@ class EveScriptParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 27
+            self.state = 29
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==EveScriptParser.T__0:
-                self.state = 24
+                self.state = 26
                 self.statement()
-                self.state = 29
+                self.state = 31
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -195,27 +198,27 @@ class EveScriptParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 30
-            self.match(EveScriptParser.T__0)
-            self.state = 31
-            self.match(EveScriptParser.T__1)
             self.state = 32
-            self.expr()
+            self.match(EveScriptParser.T__0)
             self.state = 33
-            self.match(EveScriptParser.T__2)
+            self.match(EveScriptParser.T__1)
             self.state = 34
+            self.expr()
+            self.state = 35
+            self.match(EveScriptParser.T__2)
+            self.state = 36
             self.match(EveScriptParser.T__3)
-            self.state = 38
+            self.state = 40
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==EveScriptParser.KEYWORD:
-                self.state = 35
+                self.state = 37
                 self.action()
-                self.state = 40
+                self.state = 42
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 41
+            self.state = 43
             self.match(EveScriptParser.T__4)
         except RecognitionException as re:
             localctx.exception = re
@@ -252,22 +255,22 @@ class EveScriptParser ( Parser ):
         localctx = EveScriptParser.ExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_expr)
         try:
-            self.state = 48
+            self.state = 50
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 43
-                self.term()
-                self.state = 44
-                self.match(EveScriptParser.T__5)
                 self.state = 45
+                self.term()
+                self.state = 46
+                self.match(EveScriptParser.T__5)
+                self.state = 47
                 self.expr()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 47
+                self.state = 49
                 self.term()
                 pass
 
@@ -307,22 +310,22 @@ class EveScriptParser ( Parser ):
         localctx = EveScriptParser.TermContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_term)
         try:
-            self.state = 55
+            self.state = 57
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 50
-                self.factor()
-                self.state = 51
-                self.match(EveScriptParser.T__6)
                 self.state = 52
+                self.factor()
+                self.state = 53
+                self.match(EveScriptParser.T__6)
+                self.state = 54
                 self.term()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 54
+                self.state = 56
                 self.factor()
                 pass
 
@@ -366,28 +369,28 @@ class EveScriptParser ( Parser ):
         localctx = EveScriptParser.FactorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_factor)
         try:
-            self.state = 64
+            self.state = 66
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [EveScriptParser.T__1]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 57
-                self.match(EveScriptParser.T__1)
-                self.state = 58
-                self.expr()
                 self.state = 59
+                self.match(EveScriptParser.T__1)
+                self.state = 60
+                self.expr()
+                self.state = 61
                 self.match(EveScriptParser.T__2)
                 pass
             elif token in [EveScriptParser.T__7]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 61
+                self.state = 63
                 self.match(EveScriptParser.T__7)
-                self.state = 62
+                self.state = 64
                 self.factor()
                 pass
             elif token in [EveScriptParser.T__14, EveScriptParser.T__15, EveScriptParser.STRING, EveScriptParser.VARIABLE, EveScriptParser.NUMBER]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 63
+                self.state = 65
                 self.predicate()
                 pass
             else:
@@ -435,22 +438,22 @@ class EveScriptParser ( Parser ):
         localctx = EveScriptParser.PredicateContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_predicate)
         try:
-            self.state = 71
+            self.state = 73
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 66
-                self.operand()
-                self.state = 67
-                self.operator()
                 self.state = 68
+                self.operand()
+                self.state = 69
+                self.operator()
+                self.state = 70
                 self.operand()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 70
+                self.state = 72
                 self.boolean()
                 pass
 
@@ -487,7 +490,7 @@ class EveScriptParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 73
+            self.state = 75
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EveScriptParser.T__8) | (1 << EveScriptParser.T__9) | (1 << EveScriptParser.T__10) | (1 << EveScriptParser.T__11) | (1 << EveScriptParser.T__12) | (1 << EveScriptParser.T__13) | (1 << EveScriptParser.KEYWORD))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -528,17 +531,17 @@ class EveScriptParser ( Parser ):
         localctx = EveScriptParser.OperandContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_operand)
         try:
-            self.state = 77
+            self.state = 79
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [EveScriptParser.VARIABLE]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 75
+                self.state = 77
                 self.match(EveScriptParser.VARIABLE)
                 pass
             elif token in [EveScriptParser.T__14, EveScriptParser.T__15, EveScriptParser.STRING, EveScriptParser.NUMBER]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 76
+                self.state = 78
                 self.const()
                 pass
             else:
@@ -574,7 +577,7 @@ class EveScriptParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 79
+            self.state = 81
             _la = self._input.LA(1)
             if not(_la==EveScriptParser.T__14 or _la==EveScriptParser.T__15):
                 self._errHandler.recoverInline(self)
@@ -618,22 +621,22 @@ class EveScriptParser ( Parser ):
         localctx = EveScriptParser.ConstContext(self, self._ctx, self.state)
         self.enterRule(localctx, 18, self.RULE_const)
         try:
-            self.state = 84
+            self.state = 86
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [EveScriptParser.STRING]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 81
+                self.state = 83
                 self.match(EveScriptParser.STRING)
                 pass
             elif token in [EveScriptParser.NUMBER]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 82
+                self.state = 84
                 self.match(EveScriptParser.NUMBER)
                 pass
             elif token in [EveScriptParser.T__14, EveScriptParser.T__15]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 83
+                self.state = 85
                 self.boolean()
                 pass
             else:
@@ -658,11 +661,8 @@ class EveScriptParser ( Parser ):
         def KEYWORD(self):
             return self.getToken(EveScriptParser.KEYWORD, 0)
 
-        def param(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(EveScriptParser.ParamContext)
-            else:
-                return self.getTypedRuleContext(EveScriptParser.ParamContext,i)
+        def params(self):
+            return self.getTypedRuleContext(EveScriptParser.ParamsContext,0)
 
 
         def getRuleIndex(self):
@@ -675,29 +675,78 @@ class EveScriptParser ( Parser ):
 
         localctx = EveScriptParser.ActionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_action)
-        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 86
-            self.match(EveScriptParser.KEYWORD)
-            self.state = 87
-            self.match(EveScriptParser.T__1)
             self.state = 88
-            self.param()
-            self.state = 93
+            self.match(EveScriptParser.KEYWORD)
+            self.state = 89
+            self.match(EveScriptParser.T__1)
+            self.state = 90
+            self.params()
+            self.state = 91
+            self.match(EveScriptParser.T__2)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class ParamsContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def param(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(EveScriptParser.ParamContext)
+            else:
+                return self.getTypedRuleContext(EveScriptParser.ParamContext,i)
+
+
+        def getRuleIndex(self):
+            return EveScriptParser.RULE_params
+
+
+
+
+    def params(self):
+
+        localctx = EveScriptParser.ParamsContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 22, self.RULE_params)
+        self._la = 0 # Token type
+        try:
+            self.state = 102
             self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            while _la==EveScriptParser.T__16:
-                self.state = 89
-                self.match(EveScriptParser.T__16)
-                self.state = 90
+            token = self._input.LA(1)
+            if token in [EveScriptParser.T__14, EveScriptParser.T__15, EveScriptParser.STRING, EveScriptParser.NUMBER]:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 93
                 self.param()
-                self.state = 95
+                self.state = 98
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
+                while _la==EveScriptParser.T__16:
+                    self.state = 94
+                    self.match(EveScriptParser.T__16)
+                    self.state = 95
+                    self.param()
+                    self.state = 100
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
 
-            self.state = 96
-            self.match(EveScriptParser.T__2)
+                pass
+            elif token in [EveScriptParser.T__2]:
+                self.enterOuterAlt(localctx, 2)
+
+                pass
+            else:
+                raise NoViableAltException(self)
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -727,10 +776,10 @@ class EveScriptParser ( Parser ):
     def param(self):
 
         localctx = EveScriptParser.ParamContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_param)
+        self.enterRule(localctx, 24, self.RULE_param)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 98
+            self.state = 104
             self.const()
         except RecognitionException as re:
             localctx.exception = re

@@ -45,7 +45,11 @@ const: STRING
     | boolean
     ;
 
-action: KEYWORD '(' param (',' param)* ')'
+action: KEYWORD '(' params ')'
+    ;
+
+params: param (',' param)*
+    |
     ;
 
 param: const

@@ -119,6 +119,22 @@ zero_actions_ast = {
     ]
 }
 
+empty_param_action = '''
+    if (true) {
+        test()
+    }
+'''
+
+empty_param_action_ast = {
+    'statements': [
+        {
+            'if': True,
+            'then': [
+                {'func': 'test', 'params': []},
+            ]
+        },
+    ]
+}
 
 syntax_error = '''
 -
@@ -164,6 +180,10 @@ class CompilerTestCase(unittest.TestCase):
     def test_zero_actions(self):
         ast = self.compiler.compile(zero_actions)
         self.assertEqual(ast, zero_actions_ast)
+
+    def test_empty_param_action(self):
+        ast = self.compiler.compile(empty_param_action)
+        self.assertEqual(ast, empty_param_action_ast)
 
     def test_syntax_error(self):
         with self.assertRaises(antlr4.error.Errors.ParseCancellationException):

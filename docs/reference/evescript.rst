@@ -264,6 +264,9 @@ EBNF Definition
                |  'false'
   
   
-  <action>   ::= keyword "(" <param> { "," <param> } ")"
+  <action>   ::= keyword "(" <params> ")"
+
+  <params>   ::= <param> { "," <param> }
+              | empty
   
   <param>    ::= <operand>

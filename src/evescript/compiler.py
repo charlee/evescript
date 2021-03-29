@@ -149,8 +149,14 @@ class EveScriptCompiler(ParseTreeVisitor):
     def visitAction(self, ctx: EveScriptParser.ActionContext):
         return {
             'func': ctx.KEYWORD().getText(),
-            'params': [self.visitParam(param) for param in ctx.param()],
+            'params': self.visitParams(ctx.params()),
         }
+
+    def visitParams(self, ctx: EveScriptParser.ParamsContext):
+        if ctx.param():
+            return [self.visitParam(param) for param in ctx.param()]
+        else:
+            return []
 
     # Visit a parse tree produced by EveScriptParser#param.
     def visitParam(self, ctx: EveScriptParser.ParamContext):
