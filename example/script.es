@@ -16,3 +16,17 @@ if (true) {
 if (false) {
     say("This action should never run!")
 }
+
+# Nested statements
+if (true) {
+    if (true) {
+        say("true & true")
+    }
+
+    if (false) {
+        say("true & false")
+    }
+}
+
+# Or run actions directly
+say("Run action directly")

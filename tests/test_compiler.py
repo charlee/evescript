@@ -136,6 +136,40 @@ empty_param_action_ast = {
     ]
 }
 
+standalone_action = '''
+test()
+'''
+
+standalone_action_ast = {
+    'statements': [
+        {'func': 'test', 'params': []}
+    ]
+}
+
+nested_if = '''
+if (true) {
+    if (false) {
+        test()
+    }
+}
+'''
+
+nested_if_ast = {
+    'statements': [
+        {
+            'if': True,
+            'then': [
+                {
+                    'if': False,
+                    'then': [
+                        {'func': 'test', 'params': []}
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
 syntax_error = '''
 -
 '''
@@ -192,3 +226,11 @@ class CompilerTestCase(unittest.TestCase):
     def test_comment(self):
         ast = self.compiler.compile(comment, True)
         self.assertEqual(ast, comment_ast)
+
+    def test_standalone_action(self):
+        ast = self.compiler.compile(standalone_action, True)
+        self.assertEqual(ast, standalone_action_ast)
+
+    def test_nested_if(self):
+        ast = self.compiler.compile(nested_if, True)
+        self.assertEqual(ast, nested_if_ast)

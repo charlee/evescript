@@ -36,6 +36,23 @@ zero_actions = '''
     }
 '''
 
+empty_param_action = '''
+    if (true) {
+        test()
+    }
+'''
+
+standalone_action = '''
+test()
+'''
+
+nested_if = '''
+if (true) {
+    if (false) {
+        test()
+    }
+}
+'''
 
 class DecompilerTestCase(unittest.TestCase):
 
@@ -66,4 +83,12 @@ class DecompilerTestCase(unittest.TestCase):
 
     def test_multi_actions(self):
         ast = self.compiler.compile(multi_actions)
+        self.assertDecompile(ast)
+
+    def test_standalone_action(self):
+        ast = self.compiler.compile(standalone_action)
+        self.assertDecompile(ast)
+
+    def test_nested_if(self):
+        ast = self.compiler.compile(nested_if)
         self.assertDecompile(ast)

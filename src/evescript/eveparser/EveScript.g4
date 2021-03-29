@@ -3,7 +3,11 @@ grammar EveScript;
 script: statement*
     ;
 
-statement: 'if' '(' expr ')' '{' action* '}'
+block: '{' statement* '}'
+    ;
+
+statement: 'if' '(' expr ')' block
+    | action
     ;
 
 expr: term '||' expr

@@ -47,10 +47,16 @@ class EveScriptCompiler(ParseTreeVisitor):
 
     # Visit a parse tree produced by EveScriptParser#condition.
     def visitStatement(self, ctx: EveScriptParser.StatementContext):
-        return {
-            'if': self.visitExpr(ctx.expr()),
-            'then': [self.visitAction(action) for action in ctx.action()],
-        }
+        if ctx.action():
+            return self.visitAction(ctx.action())
+        elif ctx.getChild(0).getText() == 'if':
+            return {
+                'if': self.visitExpr(ctx.expr()),
+                'then': self.visitBlock(ctx.block()),
+            }
+
+    def visitBlock(self, ctx: EveScriptParser.BlockContext):
+        return [self.visitStatement(statement) for statement in ctx.statement()]
 
     # Visit a parse tree produced by EveScriptParser#expr.
     def visitExpr(self, ctx: EveScriptParser.ExprContext):
