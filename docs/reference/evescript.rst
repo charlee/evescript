@@ -258,10 +258,13 @@ EBNF Definition
 
   <script> ::= { <statement> }
 
-  <block>  ::= '{' { <statement> } '}'
+  <block>  ::= "{" { <statement> } "}"
+            |  <statement>
   
-  <statement> ::= "if" "(" <expr> ")" "{" { action } "}"
-               |  action
+  <statement> ::= <if_statement>
+               |  <action>
+
+  <if_statement> ::= "if" "(" <expr> ")" <block> [ "else" <block> ]
   
   <expr>   ::= <term> "||" <expr>
             |  <term>
