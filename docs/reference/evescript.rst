@@ -54,6 +54,18 @@ The `if` statement can be nested too.
     }
   }
 
+You can also use `if...else` statement.
+
+::
+
+  # if else statement
+  if (expr1) {
+    action1()
+  } else if (expr2) {
+    action2()
+  } else {
+    action3()
+  }
 
 The following figure shows how a script is compiled and executed.
 
