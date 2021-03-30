@@ -2,6 +2,13 @@
 Changelog
 =========
 
+0.5.0 (2021-03-29)
+------------------
+* Support if...else statement.
+* Support executing actions outside if statement.
+* Support nested if statement.
+* Support actions with no params.
+
 0.4.0 (2021-03-27)
 ------------------
 * Added support for using true/false as conditions.
