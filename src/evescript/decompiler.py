@@ -3,7 +3,12 @@ def indent(lines, level=1):
 
 
 def flatten(r):
-    return [item for s in r for item in s]
+    for i in r:
+        if isinstance(i, list):
+            for j in flatten(i):
+                yield j
+        else:
+            yield i
 
 
 def precedence(operator):
@@ -21,20 +26,82 @@ class EveScriptDecompiler:
 
     def decompile(self, ast):
         statements = [self.decompile_statement(statement) for statement in ast['statements']]
-        return '\n'.join(flatten(statements))
+        lines = list(flatten(statements))
+        return '\n'.join(self.handle_indent(lines))
 
-    def decompile_statement(self, ast, indent_level=1):
+    def handle_indent(self, lines):
+        i = 0
+        indent = 0
+        while i < len(lines):
+            # move '{' to the end of previous line
+            if lines[i] == '{' and i > 0:
+                lines[i-1] += ' {'
+                del(lines[i])
+                indent += 1
+                # and skip this line
+                continue
+
+            # merge "else if" lines
+            if lines[i].startswith('if') and i > 0 and lines[i-1].endswith('else'):
+                lines[i-1] += ' ' + lines[i]
+                del(lines[i])
+                continue
+
+            # merge "} else" lines
+            if lines[i].startswith('else') and i > 0 and lines[i-1].endswith('}'):
+                lines[i-1] += ' ' + lines[i]
+                del(lines[i])
+                continue
+
+            # insert empty line
+            if not lines[i].startswith('}') and i > 0 and lines[i-1].endswith('}'):
+                lines.insert(i, '')
+
+            if lines[i] == '}':
+                if indent > 0:
+                    indent -= 1
+
+            # add indent
+            lines[i] = '  ' * indent + lines[i]
+
+            # move to next line
+            i += 1
+
+        return lines
+
+    def decompile_statement(self, ast):
         if 'if' in ast:
-            expr = self.decompile_expr(ast['if'])
-            statements = [self.decompile_statement(statement, indent_level+1) for statement in ast['then']]
-            return [
-                'if (%s) {' % expr,
-                *indent(flatten(statements), indent_level),
-                '}',
-                ''
+            result = [
+                'if (%s)' % self.decompile_expr(ast['if']),
             ]
+
+            result.append(self.decompile_block(ast['then']))
+
+            if 'else' in ast:
+                result.append('else')
+
+                # don't add braces if the 'else' statement is another 'if'
+                if not isinstance(ast['else'], list) and 'if' in ast['else']:
+                    result.append(self.decompile_statement(ast['else']))
+                else:
+                    result.append(self.decompile_block(ast['else']))
+
+            return result
+
         elif 'func' in ast:
             return self.decompile_action(ast)
+
+    def decompile_block(self, ast):
+        if isinstance(ast, list):
+            statements = [self.decompile_statement(statement) for statement in ast]
+        else:
+            statements = [self.decompile_statement(ast)]
+
+        return [
+            '{',
+            statements,
+            '}',
+        ]
 
     def decompile_expr(self, ast, prev_precedence=999):
         if isinstance(ast, dict):

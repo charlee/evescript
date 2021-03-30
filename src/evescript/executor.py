@@ -83,12 +83,20 @@ class EveScriptExecutor:
         logger.debug(f'{expr} => {result}')
         return result
 
+    def run_block(self, block):
+        if isinstance(block, list):
+            for s in block:
+                self.run_statement(s)
+        else:
+            self.run_statement(block)
+
     def run_statement(self, statement):
         # if statement
         if 'if' in statement:
             if self.evaluate_expr(statement['if']):
-                for statement in statement['then']:
-                    self.run_statement(statement)
+                self.run_block(statement['then'])
+            elif 'else' in statement:
+                self.run_block(statement['else'])
 
         # action statement
         elif 'func' in statement:

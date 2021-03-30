@@ -4,10 +4,14 @@ script: statement*
     ;
 
 block: '{' statement* '}'
+    | statement
     ;
 
-statement: 'if' '(' expr ')' block
+statement: if_statement
     | action
+    ;
+
+if_statement: 'if' '(' expr ')' block ( 'else' block )?
     ;
 
 expr: term '||' expr

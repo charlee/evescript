@@ -17,11 +17,8 @@ The basic form of an EveScript is as follows:
     action2(...)
   }
 
-  # nested if
   if (expression) {
-    if (another_expression) {
-
-    }
+    ...
   }
 
   # call action directly
@@ -45,6 +42,18 @@ An exmaple script may look like this:
 In the above script, ``$currentTime``, ``$lightSensor`` are called **variables**.
 They are the data sources of this script. And the ``matchCron``, ``>``, ``||``, ``<`` are **operators**,
 where ``matchCron`` is a custom operator, while others are built-in operators. And the ``say``, ``play`` are **actions**.
+
+The `if` statement can be nested too.
+
+::
+
+  # nested if
+  if (expr1) {
+    if (expr2) {
+      action()
+    }
+  }
+
 
 The following figure shows how a script is compiled and executed.
 

@@ -13,7 +13,7 @@ simple_script = '''
 simple_script_ast = {
     'statements': [{
         'if': {'operator': '>', 'operands': ['$var', 0]},
-        'then': [{'func': 'action', 'params': ['$var > 0']}],
+        'then': {'func': 'action', 'params': ['$var > 0']},
     }]
 }
 
@@ -84,8 +84,8 @@ multi_conditions = '''
 
 multi_conditions_ast = {
     'statements': [
-        {'if': {'operator': 'match', 'operands': ['$var1', "abc"]}, 'then': [{'func': 'action', 'params': ['success']}]},
-        {'if': {'operator': '<', 'operands': ['$var2', 0]}, 'then': [{'func': 'action', 'params': ['fail']}]},
+        {'if': {'operator': 'match', 'operands': ['$var1', "abc"]}, 'then': {'func': 'action', 'params': ['success']}},
+        {'if': {'operator': '<', 'operands': ['$var2', 0]}, 'then': {'func': 'action', 'params': ['fail']}},
     ]
 }
 
@@ -129,9 +129,7 @@ empty_param_action_ast = {
     'statements': [
         {
             'if': True,
-            'then': [
-                {'func': 'test', 'params': []},
-            ]
+            'then': {'func': 'test', 'params': []},
         },
     ]
 }
@@ -158,14 +156,37 @@ nested_if_ast = {
     'statements': [
         {
             'if': True,
+            'then': {
+                'if': False,
+                'then': {'func': 'test', 'params': []}
+            }
+        }
+    ]
+}
+
+if_else = '''
+if (true) {
+    action1()
+    action1()
+} else if (false) {
+    action2()
+} else
+    action3()
+'''
+
+if_else_ast = {
+    'statements': [
+        {
+            'if': True,
             'then': [
-                {
-                    'if': False,
-                    'then': [
-                        {'func': 'test', 'params': []}
-                    ]
-                }
-            ]
+                {'func': 'action1', 'params': []},
+                {'func': 'action1', 'params': []},
+            ],
+            'else': {
+                'if': False,
+                'then': {'func': 'action2', 'params': []},
+                'else': {'func': 'action3', 'params': []},
+            }
         }
     ]
 }
@@ -234,3 +255,7 @@ class CompilerTestCase(unittest.TestCase):
     def test_nested_if(self):
         ast = self.compiler.compile(nested_if, True)
         self.assertEqual(ast, nested_if_ast)
+
+    def test_if_else(self):
+        ast = self.compiler.compile(if_else, True)
+        self.assertEqual(ast, if_else_ast)

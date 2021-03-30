@@ -28,5 +28,15 @@ if (true) {
     }
 }
 
+# if else statement
+if ($lightSensor > 50) {
+    say("Too bright!")
+    say("Too bright!")
+} else if ($lightSensor > 30) {
+    say("Good lighting")
+} else {
+    say("Too dark!")
+}
+
 # Or run actions directly
 say("Run action directly")
